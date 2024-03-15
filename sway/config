@@ -118,15 +118,15 @@ exec swayidle -w \
     focus_wrapping no 
 
     # Move your focus around
-    bindsym $mod+$left exec --no-startup-id swaymsg border pixel 0 , focus left
-    bindsym $mod+$down exec --no-startup-id swaymsg border pixel 0 ,  focus down
-    bindsym $mod+$up exec --no-startup-id swaymsg border pixel 0 , focus up
-    bindsym $mod+$right exec --no-startup-id swaymsg border pixel 0 , focus right
+    bindsym $mod+$left exec --no-startup-id swaymsg 'border pixel 0' && swaymsg 'focus left'
+    bindsym $mod+$down exec --no-startup-id swaymsg 'border pixel 0' &&  swaymsg 'focus down'
+    bindsym $mod+$up exec --no-startup-id swaymsg 'border pixel 0' && swaymsg 'focus up'
+    bindsym $mod+$right exec --no-startup-id swaymsg 'border pixel 0' && swaymsg 'focus right'
 
-    bindsym --release $mod+$left exec --no-startup-id swaymsg border pixel 5  
-    bindsym --release $mod+$down exec --no-startup-id swaymsg border pixel 5 
-    bindsym --release $mod+$up exec --no-startup-id swaymsg border pixel 5 
-    bindsym --release $mod+$right exec --no-startup-id swaymsg border pixel 5 
+    bindsym --release $mod+$left exec --no-startup-id swaymsg border pixel 3  
+    bindsym --release $mod+$down exec --no-startup-id swaymsg border pixel 3 
+    bindsym --release $mod+$up exec --no-startup-id swaymsg border pixel 3 
+    bindsym --release $mod+$right exec --no-startup-id swaymsg border pixel 3 
 
     # Move the focused window with the same, but add Shift
     bindsym $mod+Shift+$left move left
@@ -164,8 +164,8 @@ exec swayidle -w \
     # We just use 1-10 as the default.
 
     # make gaps between windows
-    gaps inner 7
-    gaps outer 1
+    gaps outer 5
+    gaps inner 3
 #
 # Layout stuff:
 #
@@ -240,16 +240,16 @@ bar {
     swaybar_command waybar
 }
 
-bindsym Print exec "grimshot savecopy area"
+bindsym Print exec "grimshot save area"
 
 #smarter splitting cause im lazy :3
 for_window [app_id="kitty"] split toggle ; opacity .9
 
-exec --no-startup-id swaymsg 'workspace 1; exec kitty --single-instance'
-exec --no-startup-id swaymsg 'workspace 1; exec kitty --single-instance'
-exec --no-startup-id swaymsg 'workspace 1; exec kitty --single-instance'
+
+exec --no-startup-id swaymsg 'workspace 1; exec kitty --single-instance' && swaymsg 'workspace 1; exec kitty --single-instance' && swaymsg 'workspace 1; exec kitty --single-instance' 
+exec --no-startup-id swaymsg 'workspace 2; exec firefox'
+
 
 focus_follows_mouse no
 
-exec --no-startup-id swaymsg 'workspace 2; exec firefox'
 
