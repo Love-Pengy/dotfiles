@@ -4,8 +4,7 @@
 #
 # Read `man 5 sway` for a complete reference.
 
-
-exec autotiling 
+xwayland enable
 
 ### Variables
 #
@@ -67,7 +66,7 @@ exec swayidle -w \
 #
 
     # Start a terminal
-    bindsym $mod+Return exec $term --single-instance
+    bindsym $mod+Return exec swaymsg "exec $term --single-instance"
 
     # Kill focused window
     bindsym $mod+Shift+q kill; split v
@@ -114,35 +113,27 @@ exec swayidle -w \
 #
     # Move window to other monitor
     bindsym $mod+m move workspace to output left
-    
+
     # make changing focus not wrap so one key does only one motion
     focus_wrapping no 
 
     # Move your focus around
-    bindsym $mod+$left exec --no-startup-id swaymsg border pixel 0 ; focus left 
-    bindsym $mod+$down exec --no-startup-id swaymsg border pixel 0 ;  focus down
-    bindsym $mod+$up exec --no-startup-id swaymsg border pixel 0 ; focus up
-    bindsym $mod+$right exec --no-startup-id swaymsg border pixel 0 ; focus right
+    bindsym $mod+$left exec --no-startup-id swaymsg border pixel 0 , focus left
+    bindsym $mod+$down exec --no-startup-id swaymsg border pixel 0 ,  focus down
+    bindsym $mod+$up exec --no-startup-id swaymsg border pixel 0 , focus up
+    bindsym $mod+$right exec --no-startup-id swaymsg border pixel 0 , focus right
 
-    bindsym --release $mod+$left exec --no-startup-id swaymsg border pixel 5 ; focus left 
-    bindsym --release $mod+$down exec --no-startup-id swaymsg border pixel 5 ;  focus down
-    bindsym --release $mod+$up exec --no-startup-id swaymsg border pixel 5 ; focus up
-    bindsym --release $mod+$right exec --no-startup-id swaymsg border pixel 5 ; focus right
+    bindsym --release $mod+$left exec --no-startup-id swaymsg border pixel 5  
+    bindsym --release $mod+$down exec --no-startup-id swaymsg border pixel 5 
+    bindsym --release $mod+$up exec --no-startup-id swaymsg border pixel 5 
+    bindsym --release $mod+$right exec --no-startup-id swaymsg border pixel 5 
 
     # Move the focused window with the same, but add Shift
-    #bindsym $mod+Shift+$left --no-startup-id swaymsg border pixel 0 ; move left
     bindsym $mod+Shift+$left move left
     bindsym $mod+Shift+$down move down
     bindsym $mod+Shift+$up move up
     bindsym $mod+Shift+$right move right
-    #bindsym $mod+Shift+$down --no-startup-id swaymsg border pixel 0 ; move down
-    #bindsym $mod+Shift+$up --no-startup-id swaymsg border pixel 0 ; move up
-    #bindsym $mod+Shift+$right --no-startup-id swaymsg border pixel 0 ; move right
 
-    #bindsym --release $mod+Shift+$left --no-startup-id swaymsg border pixel 5 ; move left
-    #bindsym --release $mod+Shift+$down --no-startup-id swaymsg border pixel 5 ; move down
-    #bindsym --release $mod+Shift+$up --no-startup-id swaymsg border pixel 5 ; move up
-    #bindsym --release $mod+Shift+$right --no-startup-id swaymsg border pixel 5 ; move right
 #
 # Workspaces:
 #
@@ -249,10 +240,10 @@ bar {
     swaybar_command waybar
 }
 
-bindsym Print exec "flameshot gui"
+bindsym Print exec "grimshot save area"
 
 #smarter splitting cause im lazy :3
-for_window [class="kitty"] split toggle
+for_window [app_id="kitty"] split toggle ; opacity .9
 
 exec --no-startup-id swaymsg 'workspace 1; exec kitty --single-instance'
 exec --no-startup-id swaymsg 'workspace 1; exec kitty --single-instance'
