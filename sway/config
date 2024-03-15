@@ -240,7 +240,7 @@ bar {
     swaybar_command waybar
 }
 
-bindsym Print exec "grimshot save area"
+bindsym Print exec "grimshot savecopy area"
 
 #smarter splitting cause im lazy :3
 for_window [app_id="kitty"] split toggle ; opacity .9
