@@ -114,8 +114,14 @@ exec swayidle -w \
     # Move window to other monitor
     bindsym $mod+m move workspace to output left
 
-    # make changing focus not wrap so one key does only one motion
-    focus_wrapping no 
+    #make focus stay in a workspace 
+    focus_wrapping workspace
+
+    # only turn borders on if there is more than one item on the workspace
+    smart_borders on
+
+    # only turn on gaps id there is more than one item on the workspace
+    smart_gaps on 
 
     # Move your focus around
     bindsym $mod+$left exec --no-startup-id swaymsg 'border pixel 0' && swaymsg 'focus left'
@@ -252,4 +258,6 @@ exec --no-startup-id swaymsg 'workspace 2; exec firefox'
 
 focus_follows_mouse no
 
+# move cursor to focused window on switch
+mouse_warping container
 
