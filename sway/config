@@ -65,6 +65,9 @@ exec swayidle -w \
 # Basics:
 #
 
+    #lock screen with a bg image
+    bindsym $mod+Shift+x exec swaylock -f -e -i ~/Pictures/lockScreen.png -s tile
+
     # Start a terminal
     bindsym $mod+Return exec swaymsg "exec $term --single-instance"
 
