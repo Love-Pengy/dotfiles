@@ -6,7 +6,14 @@
 
 	"modules-left": [
 		"sway/workspaces",
-		"custom/right-arrow-dark"
+		"custom/right-arrow-dark", 
+		"custom/right-arrow-light", 
+        "network", 
+		"custom/right-arrow-dark",
+		"custom/right-arrow-light",
+        "pulseaudio", 
+		"custom/right-arrow-dark",
+
 	],
 	"modules-center": [
 		"custom/left-arrow-dark",
@@ -21,16 +28,13 @@
 	],
 	"modules-right": [
 		"custom/left-arrow-dark",
-		"pulseaudio",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
 		"memory",
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
 		"cpu",
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
-		"battery",
+		"battery", 
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
 		"disk",
@@ -104,11 +108,11 @@
 	},
 	"battery": {
 		"states": {
-			"good": 95,
-			"warning": 30,
+			"good": 80,
+			"warning": 40,
 			"critical": 15
 		},
-		"format": "{icon} {capacity}%",
+		"format": "{icon}  {capacity}%",
 		"format-icons": [
 			"",
 			"",
@@ -117,6 +121,21 @@
 			""
 		]
 	},
+    //from https://gitlab.com/stephan-raabe/dotfiles/-/blob/main/waybar/modules.json?ref_type=heads
+     "network": {
+        "format": "{ifname}",
+        //"format-wifi": "  {signalStrength}%",
+        "format-wifi": " ",
+        //"format-ethernet": "  {ifname}",
+        "format-ethernet": "󰈀 ",  
+        "format-disconnected": "\udb81\uddaa",
+        "tooltip-format": " {ifname} via {gwaddri}",
+        "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
+        "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50,
+        "on-click": "~/.config/waybar/networkmanager.sh"
+    },
 	"disk": {
 		"interval": 5,
 		"format": "Disk {percentage_used:2}%",

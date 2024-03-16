@@ -1,6 +1,6 @@
 * {
 	font-size: 20px;
-	font-family: Hack;
+	font-family: "HackNerdFont";
 }
 
 window#waybar {
@@ -28,6 +28,7 @@ window#waybar {
 #cpu,
 #battery,
 #disk,
+#network, 
 #tray {
 	background: #1a1a1a;
 }
@@ -67,12 +68,16 @@ window#waybar {
 #disk {
 	color: #b58900;
 }
+#network{
+    color: #ffffff;
+}
 
 #clock,
 #pulseaudio,
 #backlight,
 #memory,
 #cpu,
+#network, 
 #battery,
 #disk {
 	padding: 0 10px;
