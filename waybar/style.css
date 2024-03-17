@@ -35,10 +35,10 @@ window#waybar {
 
 #workspaces button {
 	padding: 0 2px;
-	color: #fdf6e3;
+    color: #555555;
 }
 #workspaces button.focused {
-	color: #268bd2;
+    color: #ffcacb;
 }
 #workspaces button:hover {
 	box-shadow: inherit;
@@ -51,7 +51,7 @@ window#waybar {
 }
 
 #pulseaudio {
-	color: #268bd2;
+	color: #2aa198;
 }
 #backlight{
     color: #268bd2;
@@ -69,7 +69,7 @@ window#waybar {
 	color: #b58900;
 }
 #network{
-    color: #ffffff;
+	color: #6c71c4;
 }
 
 #clock,
