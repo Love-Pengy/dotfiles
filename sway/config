@@ -120,16 +120,7 @@ exec swayidle -w \
 # Moving around:
 #
     # Move window to other monitor
-    bindsym $mod+m move workspace to output left
-
-    #make focus stay in a workspace 
-    focus_wrapping workspace
-
-    # only turn borders on if there is more than one item on the workspace
-    smart_borders on
-
-    # only turn on gaps id there is more than one item on the workspace
-    smart_gaps on 
+    bindsym $mod+m exec --no-startup-id swaymsg 'move workspace to output left' 
 
     # Move your focus around
     bindsym $mod+$left exec --no-startup-id swaymsg 'border pixel 0' && swaymsg 'focus left'
@@ -151,6 +142,16 @@ exec swayidle -w \
 #
 # Workspaces:
 #
+
+    #make focus stay in a workspace 
+    focus_wrapping workspace
+
+    # only turn borders on if there is more than one item on the workspace
+    smart_borders on
+
+    # only turn on gaps id there is more than one item on the workspace
+    smart_gaps on 
+
     # Switch to workspace
     bindsym $mod+1 workspace number 1
     bindsym $mod+2 workspace number 2
@@ -244,7 +245,9 @@ bindsym $mod+r mode "resize"
 
 #remove window title bar
 default_border pixel 0
-
+#               border    bg        text     indicator
+#         (normal border)                    (indicator for where next window will open) 
+client.focused "#7777EE" "#7777EE" "#ffffff" "#7777EE"
 #
 # Status Bar:
 #
@@ -267,6 +270,7 @@ for_window [app_id="kitty"] split toggle ; opacity .9
 
 exec --no-startup-id swaymsg 'workspace 1; exec kitty --single-instance' && swaymsg 'workspace 1; exec kitty --single-instance' && swaymsg 'workspace 1; exec kitty --single-instance' 
 exec --no-startup-id swaymsg 'workspace 2; exec firefox'
+
 
 
 focus_follows_mouse no
