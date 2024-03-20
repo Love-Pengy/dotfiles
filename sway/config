@@ -260,7 +260,7 @@ bar {
 
 assign [app_id="com.obsproject.Studio"] 6 
 assign [app_id="obsidian"] 3
-assign [app_id="WebCord"] 4
+assign [class="WebCord"] 4
 
 bindsym Print exec "grimshot save area"
 

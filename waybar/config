@@ -119,7 +119,8 @@
 			"",
 			"",
 			""
-		]
+		], 
+        "format-charging": "󰂄 {capacity}%" 
 	},
     //from https://gitlab.com/stephan-raabe/dotfiles/-/blob/main/waybar/modules.json?ref_type=heads
      "network": {
