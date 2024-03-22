@@ -77,7 +77,7 @@ exec swayidle -w \
     bindsym $mod+Return exec swaymsg "exec $term --single-instance"
 
     # Kill focused window
-    bindsym $mod+Shift+q kill; split v
+    bindsym $mod+Shift+q kill; exec swaymsg border pixel 3
 
     # Start your launcher
     bindsym $mod+d exec $menu --show=drun -I -i --conf="../wofi/style.css"  
