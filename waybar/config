@@ -59,7 +59,6 @@
 		"format": "",
 		"tooltip": false
 	},
-
 	"sway/workspaces": {
 		"disable-scroll": true,
 		"format": "{name}"

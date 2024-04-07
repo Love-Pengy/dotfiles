@@ -4,6 +4,9 @@
 #
 # Read `man 5 sway` for a complete reference.
 
+# hide cursor after time (this is in ms) 
+seat * hide_cursor 10000
+
 
 # setup for obs
 exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
@@ -47,7 +50,7 @@ output * bg ~/Pictures/wallpaper.png fill
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 exec swayidle -w \
-          timeout 300 'swaylock -f -c 000000' \
+          timeout 300 'swaylock -f -e -i ~/Pictures/lockScreen.png -s tile' \
           timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
           before-sleep 'swaylock -f -e -i ~/Pictures/lockScreen.png -s tile'
 
@@ -97,20 +100,20 @@ exec swayidle -w \
 
     #use pactl to adjust volume in pulse audio
     set $refresh_i3status kill all -SIGUSR1 i3status
-    bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
-    bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% 
-    bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle 
+    bindsym XF86AudioRaiseVolume exec  pactl set-sink-volume @DEFAULT_SINK@ +5%
+    bindsym XF86AudioLowerVolume exec  pactl set-sink-volume @DEFAULT_SINK@ -5% 
+    bindsym XF86AudioMute exec  pactl set-sink-mute @DEFAULT_SINK@ toggle 
 
     #use light to change brightness of display
-    exec --no-startup-id -N 5
-    bindsym XF86MonBrightnessUp exec --no-startup-id light -A 10
-    bindsym XF86MonBrightnessDown exec --no-startup-id light -U 10 
+    exec  -N 5
+    bindsym XF86MonBrightnessUp exec  light -A 10
+    bindsym XF86MonBrightnessDown exec  light -U 10 
 
     #multimedia keys
-    bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
-    bindsym XF86AudioPause exec --no-startup-id playerctl play-pause
-    bindsym XF86AudioNext exec --no-startup-id playerctl next
-    bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+    bindsym XF86AudioPlay exec  playerctl play-pause
+    bindsym XF86AudioPause exec  playerctl play-pause
+    bindsym XF86AudioNext exec  playerctl next
+    bindsym XF86AudioPrev exec  playerctl previous
 
 
 
@@ -120,18 +123,18 @@ exec swayidle -w \
 # Moving around:
 #
     # Move window to other monitor
-    bindsym $mod+m exec --no-startup-id swaymsg 'move workspace to output left' 
+    bindsym $mod+m exec  swaymsg 'move workspace to output left' 
 
     # Move your focus around
-    bindsym $mod+$left exec --no-startup-id swaymsg 'border pixel 0' && swaymsg 'focus left'
-    bindsym $mod+$down exec --no-startup-id swaymsg 'border pixel 0' &&  swaymsg 'focus down'
-    bindsym $mod+$up exec --no-startup-id swaymsg 'border pixel 0' && swaymsg 'focus up'
-    bindsym $mod+$right exec --no-startup-id swaymsg 'border pixel 0' && swaymsg 'focus right'
+    bindsym $mod+$left exec  swaymsg 'border pixel 0' && swaymsg 'focus left'
+    bindsym $mod+$down exec  swaymsg 'border pixel 0' &&  swaymsg 'focus down'
+    bindsym $mod+$up exec  swaymsg 'border pixel 0' && swaymsg 'focus up'
+    bindsym $mod+$right exec  swaymsg 'border pixel 0' && swaymsg 'focus right'
 
-    bindsym --release $mod+$left exec --no-startup-id swaymsg border pixel 3  
-    bindsym --release $mod+$down exec --no-startup-id swaymsg border pixel 3 
-    bindsym --release $mod+$up exec --no-startup-id swaymsg border pixel 3 
-    bindsym --release $mod+$right exec --no-startup-id swaymsg border pixel 3 
+    bindsym --release $mod+$left exec  swaymsg border pixel 3  
+    bindsym --release $mod+$down exec  swaymsg border pixel 3 
+    bindsym --release $mod+$up exec  swaymsg border pixel 3 
+    bindsym --release $mod+$right exec  swaymsg border pixel 3 
 
     # Move the focused window with the same, but add Shift
     bindsym $mod+Shift+$left move left
@@ -179,8 +182,8 @@ exec swayidle -w \
     # We just use 1-10 as the default.
 
     # make gaps between windows
-    gaps outer 5
     gaps inner 3
+    gaps outer -3
 #
 # Layout stuff:
 #
@@ -245,6 +248,7 @@ bindsym $mod+r mode "resize"
 
 #remove window title bar
 default_border pixel 0
+
 #               border    bg        text     indicator
 #         (normal border)                    (indicator for where next window will open) 
 client.focused "#7777EE" "#7777EE" "#ffffff" "#7777EE"
@@ -268,8 +272,8 @@ bindsym Print exec "grimshot save area"
 for_window [app_id="kitty"] split toggle ; opacity .9
 
 
-exec --no-startup-id swaymsg 'workspace 1; exec kitty --single-instance' && swaymsg 'workspace 1; exec kitty --single-instance' && swaymsg 'workspace 1; exec kitty --single-instance' 
-exec --no-startup-id swaymsg 'workspace 2; exec firefox'
+#exec  swaymsg 'workspace 1; exec kitty --single-instance' && swaymsg 'workspace 1; exec kitty --single-instance' && swaymsg 'workspace 1; exec kitty --single-instance' 
+#exec  swaymsg 'workspace 2; exec firefox'
 
 
 

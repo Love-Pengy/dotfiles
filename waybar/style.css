@@ -6,6 +6,7 @@
 window#waybar {
 	background: #292b2e;
 	color: #fdf6e3;
+
 }
 
 #custom-right-arrow-dark,
@@ -65,11 +66,17 @@ window#waybar {
 #battery {
 	color: #859900;
 }
+#battery.critical{
+    color: #FF0000;
+}
 #disk {
 	color: #b58900;
 }
 #network{
 	color: #6c71c4;
+}
+#network.disconnected{
+    color: #FF0000;
 }
 
 #clock,

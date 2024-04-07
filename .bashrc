@@ -96,6 +96,7 @@ fi
 # custom aliases
 alias shutdown='systemctl poweroff'
 alias restart='systemctl reboot'
+alias suspend='systemctl suspend'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
