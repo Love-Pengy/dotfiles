@@ -50,8 +50,8 @@ output * bg ~/Pictures/wallpaper.png fill
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 exec swayidle -w \
-          timeout 300 'swaylock -f -e -i ~/Pictures/lockScreen.png -s tile' \
-          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+          timeout 600 'swaylock -f -e -i ~/Pictures/lockScreen.png -s tile' \
+          timeout 900 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
           before-sleep 'swaylock -f -e -i ~/Pictures/lockScreen.png -s tile'
 
 ### Input configuration
@@ -266,7 +266,7 @@ assign [app_id="com.obsproject.Studio"] 6
 assign [app_id="obsidian"] 3
 assign [class="WebCord"] 4
 
-bindsym Print exec "grimshot save area"
+bindsym Print exec "wl-copy < $(grimshot save area)"
 
 #smarter splitting cause im lazy :3
 for_window [app_id="kitty"] split toggle ; opacity .9
