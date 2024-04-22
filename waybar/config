@@ -89,8 +89,7 @@
 			]
 		},
 		"scroll-step": 5,
-		"on-click": "pamixer -t",
-		"on-click-right": "pavucontrol"
+		"on-click": "pavucontrol",
 	},
     "backlight": {
                "device": "intel_backlight",
@@ -142,7 +141,8 @@
 		"path": "/"
 	},
 	"tray": {
-		"icon-size": 20
+		"icon-size": 17, 
+        "spacing": 7
 	}
 }
 

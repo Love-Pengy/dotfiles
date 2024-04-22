@@ -126,6 +126,8 @@ export QT_QPA_PLATFORMTHEME="qt5ct"
 
 export _JAVA_AWT_WM_NONREPARENTING=1
 
+#firefox wayland
+export MOZ_ENABLE_WAYLAND=1
 
 hyfetch
 . "$HOME/.cargo/env"
