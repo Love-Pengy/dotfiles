@@ -83,7 +83,7 @@ exec swayidle -w \
     bindsym $mod+Shift+q kill && exec swaymsg border pixel 3
 
     # start your launcher || delay script is here to give time for the program to launch before setting the border again as wofi returns immediately after start of launch
-    bindsym $mod+d exec swaymsg 'border pixel 0' & $menu --show=drun -I -i --conf="../wofi/style.css"  & /home/Bee/.config/sway/melay.sh && swaymsg 'border pixel 3'
+    bindsym $mod+d exec swaymsg 'border pixel 0' & $menu --show=drun -I -i --conf="../wofi/style.css"  && /home/Bee/.config/sway/delay.sh && swaymsg 'border pixel 3'
 
 
     # Drag floating windows by holding down $mod and left mouse button.
@@ -210,7 +210,7 @@ exec swayidle -w \
     bindsym $mod+f fullscreen
 
     # Toggle the current focus between tiling and floating mode
-    #bindsym $mod+Shift+space floating toggle
+    bindsym $mod+Shift+space floating toggle
 
     # Swap focus between the tiling area and the floating area
     #bindsym $mod+space focus mode_toggle
