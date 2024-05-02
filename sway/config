@@ -80,10 +80,10 @@ exec swayidle -w \
     bindsym $mod+Return exec swaymsg 'border pixel 0' & swaymsg "exec $term --single-instance"
 
     # Kill focused window
-    bindsym $mod+Shift+q kill && exec swaymsg border pixel 3
+    bindsym $mod+Shift+q exec /home/Bee/.config/sway/kill.sh
 
     # start your launcher || delay script is here to give time for the program to launch before setting the border again as wofi returns immediately after start of launch
-    bindsym $mod+d exec swaymsg 'border pixel 0' & $menu --show=drun -I -i --conf="../wofi/style.css"  && /home/Bee/.config/sway/delay.sh && swaymsg 'border pixel 3'
+    bindsym $mod+d exec /home/Bee/.config/sway/dmenu.sh
 
 
     # Drag floating windows by holding down $mod and left mouse button.
