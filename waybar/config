@@ -63,11 +63,10 @@
 		"disable-scroll": true,
 		"format": "{name}"
 	},
-
-	"clock#1": {
+	"clock#1":{
 		"format": "{:%a}",
 		"tooltip": false
-	},
+	}, 
 	"clock#2": {
 		"format": "{:%I:%M %p}",
 		"tooltip": false

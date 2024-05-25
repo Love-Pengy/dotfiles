@@ -6,6 +6,7 @@
     # hide cursor after time (this is in ms) 
     seat * hide_cursor 10000
 
+
     # set default border size to 3
     default_border pixel 3
 
@@ -13,7 +14,7 @@
     #         (normal border)                    (indicator for where next window will open) 
     client.focused "#7777EE" "#7777EE" "#ffffff" "#7777EE"
 
-    # setup for obs
+    # get screensharing working on obs
     exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
     exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
@@ -94,10 +95,10 @@
     bindsym $mod+Return exec swaymsg 'border pixel 0' & swaymsg "exec $term --single-instance"
 
     # Kill focused window
-    bindsym $mod+Shift+q exec /home/Bee/.config/sway/kill.sh
+    bindsym $mod+Shift+q exec /home/Bee/.config/sway/scripts/kill.sh
 
     # start your launcher || delay script is here to give time for the program to launch before setting the border again as wofi returns immediately after start of launch
-    bindsym $mod+d exec /home/Bee/.config/sway/dmenu.sh
+    bindsym $mod+d exec /home/Bee/.config/sway/scripts/dmenu.sh
 
     # Reload the configuration file
     bindsym $mod+Shift+r reload
@@ -123,13 +124,6 @@
     # mouse button for dragging.
     floating_modifier $mod normal
 
-
-
-    
-
-
-
-#
 ### Workspaces:
 
     mode "resize" {
@@ -157,29 +151,30 @@
     # only turn on gaps id there is more than one item on the workspace
     smart_gaps on 
 
+
     # Switch to workspace
-    bindsym $mod+1 workspace number 1
-    bindsym $mod+2 workspace number 2
-    bindsym $mod+3 workspace number 3
-    bindsym $mod+4 workspace number 4
-    bindsym $mod+5 workspace number 5
-    bindsym $mod+6 workspace number 6
-    bindsym $mod+7 workspace number 7
-    bindsym $mod+8 workspace number 8
-    bindsym $mod+9 workspace number 9
-    bindsym $mod+0 workspace number 10
+    bindsym $mod+1 exec ~/.config/sway/scripts/workspaces/switch/switchWS1.sh 
+    bindsym $mod+2 exec ~/.config/sway/scripts/workspaces/switch/switchWS2.sh 
+    bindsym $mod+3 exec ~/.config/sway/scripts/workspaces/switch/switchWS3.sh 
+    bindsym $mod+4 exec ~/.config/sway/scripts/workspaces/switch/switchWS4.sh 
+    bindsym $mod+5 exec ~/.config/sway/scripts/workspaces/switch/switchWS5.sh 
+    bindsym $mod+6 exec ~/.config/sway/scripts/workspaces/switch/switchWS6.sh 
+    bindsym $mod+7 exec ~/.config/sway/scripts/workspaces/switch/switchWS7.sh 
+    bindsym $mod+8 exec ~/.config/sway/scripts/workspaces/switch/switchWS8.sh 
+    bindsym $mod+9 exec ~/.config/sway/scripts/workspaces/switch/switchWS9.sh 
+    bindsym $mod+0 exec ~/.config/sway/scripts/workspaces/switch/switchWS10.sh 
 
     # Move focused container to workspace
-    bindsym $mod+Shift+1 move container to workspace number 1
-    bindsym $mod+Shift+2 move container to workspace number 2
-    bindsym $mod+Shift+3 move container to workspace number 3
-    bindsym $mod+Shift+4 move container to workspace number 4
-    bindsym $mod+Shift+5 move container to workspace number 5
-    bindsym $mod+Shift+6 move container to workspace number 6
-    bindsym $mod+Shift+7 move container to workspace number 7
-    bindsym $mod+Shift+8 move container to workspace number 8
-    bindsym $mod+Shift+9 move container to workspace number 9
-    bindsym $mod+Shift+0 move container to workspace number 10
+    bindsym $mod+Shift+1 exec ~/.config/sway/scripts/workspaces/move/moveWS1.sh
+    bindsym $mod+Shift+2 exec ~/.config/sway/scripts/workspaces/move/moveWS2.sh
+    bindsym $mod+Shift+3 exec ~/.config/sway/scripts/workspaces/move/moveWS3.sh
+    bindsym $mod+Shift+4 exec ~/.config/sway/scripts/workspaces/move/moveWS4.sh
+    bindsym $mod+Shift+5 exec ~/.config/sway/scripts/workspaces/move/moveWS5.sh
+    bindsym $mod+Shift+6 exec ~/.config/sway/scripts/workspaces/move/moveWS6.sh
+    bindsym $mod+Shift+7 exec ~/.config/sway/scripts/workspaces/move/moveWS7.sh
+    bindsym $mod+Shift+8 exec ~/.config/sway/scripts/workspaces/move/moveWS8.sh
+    bindsym $mod+Shift+9 exec ~/.config/sway/scripts/workspaces/move/moveWS9.sh
+    bindsym $mod+Shift+0 exec ~/.config/sway/scripts/workspaces/move/moveWS10.sh
 
     # make gaps between windows
     gaps inner 3
@@ -206,16 +201,12 @@
 
 ### SCRATCHPAD:
 
-    # Sway has a "scratchpad", which is a bag of holding for windows.
-    # You can send windows there and get them back later.
-
     # Move the currently focused window to the scratchpad
     bindsym $mod+Shift+minus move scratchpad
 
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
     bindsym $mod+minus scratchpad show
-
 
 
 ### STATUS BAR:

@@ -119,12 +119,9 @@ if ! shopt -oq posix; then
 fi
 
 # obs vars
-export QT_QPA_PLATFORM=wayland
-export XDG_CURRENT_DESKTOP=sway
-export XDG_CURRENT_DESKTOP=sway
-export QT_QPA_PLATFORMTHEME="qt5ct"
-
-export _JAVA_AWT_WM_NONREPARENTING=1
+#export QT_QPA_PLATFORM=wayland
+#export XDG_CURRENT_DESKTOP=sway
+#export QT_QPA_PLATFORMTHEME="qt5ct"
 
 #firefox wayland
 export MOZ_ENABLE_WAYLAND=1
