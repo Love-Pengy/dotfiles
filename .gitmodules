@@ -1,0 +1,3 @@
+[submodule "BeeConfig"]
+	path = BeeConfig
+	url = git@github.com:Love-Pengy/BeeConfig.git
