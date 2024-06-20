@@ -222,7 +222,7 @@
     assign [class="discord"] 4
 
     #  smarter splitting cause im lazy :3
-    for_window [app_id="kitty"] split toggle ; opacity .9 
+    for_window [app_id="kitty"] split toggle ; opacity .97 
 
 
 

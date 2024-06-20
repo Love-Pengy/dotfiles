@@ -3,7 +3,7 @@
 {
 	"layer": "top",
 	"position": "top",
-
+    "height": 7, 
 	"modules-left": [
 		"sway/workspaces",
 		"custom/right-arrow-dark", 
@@ -11,6 +11,9 @@
         "network", 
 		"custom/right-arrow-dark",
 		"custom/right-arrow-light",
+        "custom/pomodoro", 
+        "custom/right-arrow-dark", 
+        "custom/right-arrow-light", 
         "pulseaudio", 
 		"custom/right-arrow-dark",
 
@@ -75,7 +78,18 @@
 		"format": "{:%m-%d}",
 		"tooltip": false
 	},
-
+    
+"custom/pomodoro": {
+	"format": "{} {icon}",
+	"return-type": "json",
+	"format-icons": {
+		"work": "󰔟",
+		"break": "",
+	},
+	"exec": "waybar-module-pomodoro -w 45 -s 15 -l 30 --no-icons",
+	"on-click": "waybar-module-pomodoro toggle",
+	"on-click-right": "waybar-module-pomodoro reset",
+},
 	"pulseaudio": {
 		"format": "{icon} {volume:2}%",
 		"format-bluetooth": "{icon}  {volume}%",
@@ -125,7 +139,7 @@
         //"format-wifi": "  {signalStrength}%",
         "format-wifi": " ",
         //"format-ethernet": "  {ifname}",
-        "format-ethernet": "󰈀 ",  
+        "format-ethernet": "󰈀",  
         "format-disconnected": "\udb81\uddaa",
         "tooltip-format": " {ifname} via {gwaddri}",
         "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",

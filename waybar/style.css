@@ -1,5 +1,5 @@
 * {
-	font-size: 20px;
+	font-size: 18px;
 	font-family: "HackNerdFont";
 }
 
@@ -29,6 +29,7 @@ window#waybar {
 #cpu,
 #battery,
 #disk,
+#custom-pomodoro, 
 #network, 
 #tray {
 	background: #1a1a1a;
@@ -63,6 +64,12 @@ window#waybar {
 #cpu {
 	color: #6c71c4;
 }
+#custom-pomodoro.work{
+    color: #FF474C; 
+}
+#custom-pomodoro.break{
+    color: #D3B683; 
+}
 #battery {
 	color: #859900;
 }
@@ -88,6 +95,7 @@ window#waybar {
 #memory,
 #cpu,
 #network, 
+#custom-pomodoro, 
 #battery,
 #disk {
 	padding: 0 10px;
