@@ -32,8 +32,8 @@
 
     #use pactl to adjust volume in pulse audio
     set $refresh_i3status kill all -SIGUSR1 i3status
-    bindsym XF86AudioRaiseVolume exec  pactl set-sink-volume @DEFAULT_SINK@ +5%
-    bindsym XF86AudioLowerVolume exec  pactl set-sink-volume @DEFAULT_SINK@ -5% 
+    bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+    bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5% 
     bindsym XF86AudioMute exec  pactl set-sink-mute @DEFAULT_SINK@ toggle 
 
     #use light to change brightness of display
