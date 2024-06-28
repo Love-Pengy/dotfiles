@@ -3,7 +3,7 @@
 {
 	"layer": "top",
 	"position": "top",
-    "height": 7, 
+    "height": 26, 
 	"modules-left": [
 		"sway/workspaces",
 		"custom/right-arrow-dark", 
@@ -86,7 +86,7 @@
 		"work": "󰔟",
 		"break": "",
 	},
-	"exec": "waybar-module-pomodoro -w 45 -s 15 -l 30 --no-icons",
+	"exec": "waybar-module-pomodoro -w 30 -s 10 -l 20 --no-icons",
 	"on-click": "waybar-module-pomodoro toggle",
 	"on-click-right": "waybar-module-pomodoro reset",
 },
@@ -149,7 +149,7 @@
         "on-click": "~/.config/waybar/networkmanager.sh"
     },
 	"disk": {
-		"interval": 5,
+		"interval": 10,
 		"format": "Disk {percentage_used:2}%",
 		"path": "/"
 	},

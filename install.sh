@@ -255,12 +255,6 @@ rm -rf ./dotfiles/.git
 rm ./dotfiles/.gitmodules 
 mv '\ls -al ~/dotfiles | grep -v install.sh' ~/.config
 
-# keystroke display
-git clone git@github.com:Beaux44/Keystroke-Display.git ~/applications/keystroke-display
-cd ~/applications/keystroke-display 
-cargo build --release
-mkdir /usr/bin/obs-plugins
-cp ~/target/release/keystroke_overlay.so /usr/bin/obs-plugins 
 
 
 
