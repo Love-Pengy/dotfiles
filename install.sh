@@ -45,7 +45,7 @@ done
 mkdir -p ~/pictures ~/documents ~/videos ~/applications ~/downloads ~/projects ~/windowsServer ~/usbMount
 
 # Sway 
-$installHeader sway pactl light playerctl grimshot swayidle swaylock wl-clipboard
+$installHeader sway pactl light playerctl grimshot swayidle swaylock wl-clipboard pipewire pipewire-pulse
 
 # Wofi
 $installHeader wofi
@@ -91,6 +91,9 @@ pip install -U hyfetch
 # Utils # 
 # ##### #
 
+# local send
+$installHeader localsend
+
 # firefox
 $installHeader firefox
 
@@ -124,6 +127,9 @@ $installHeader \
        nlohmann-json3-dev \
        libwebsocketpp-dev \
        libasio-dev
+
+##CHANGE IT TO THIS
+# cmake -S . -B build -G Ninja -DCEF_ROOT_DIR="cef_binary_5060_linux64/" -DENABLE_PIPEWIRE=1 -DENABLE_AJA=0 -DENABLE_WEBRTC=0 -DENABLE_PULSEAUDIO=1 -DENABLE_VST=1 -DENABLE_JACK=1 -DENABLE_ALSA=1 -DENABLE_HEVC=1 -DCMAKE_INSTALL_PREFIX=/usr -DBUILD_BROWSER=1 -DENABLE_VLC=1 -DENABLE_WAYLAND=1 -DENABLE_RNNOISE=1 -DENABLE_SPEEXDSP=1 -DENABLE_V4L2=1 -DENABLE_FFMPEG_NVENC=0 -DENABLE_WEBSOCKET=0 -DENABLE_NATIVE_NVENC=OFF
 
 cmake -S . -B ~/applications -G Ninja \
 	-DCEF_ROOT_DIR="../obs-build-dependencies/cef_binary_5060_linux_x86_64" \

@@ -223,6 +223,9 @@
 
     #  smarter splitting cause im lazy :3
     for_window [app_id="kitty"] split toggle ; opacity .97 
+    
+    # make blanket launch in scratchpad
+    #for_window [name="Blanket"] , move scratchpad
 
 
 

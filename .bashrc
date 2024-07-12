@@ -118,6 +118,18 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# cycle through if hitting tab
+bind 'TAB:menu-complete'
+
+# display a lit of the matching files
+bind "set show-all-if-ambiguous on"
+
+# inverse menu
+bind '"\e[Z":menu-complete-backward'
+
+# do partial completion on the first tab cycle after that 
+bind "set menu-complete-display-prefix on"
+
 # obs vars
 #export QT_QPA_PLATFORM=wayland
 #export XDG_CURRENT_DESKTOP=sway

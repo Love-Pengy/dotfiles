@@ -24,6 +24,7 @@
   - swayidle
   - swaylock
   - wl-clipboard
+  - pipewire, pipewire-pulse
 - wofi
 - waybar
 - kitty
@@ -34,6 +35,7 @@
 
 ## Utils
 
+- localsend
 - firefox
 - obs studio
   - build from source so you actually get the whole thing

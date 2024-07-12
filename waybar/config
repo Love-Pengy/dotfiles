@@ -86,7 +86,7 @@
 		"work": "󰔟",
 		"break": "",
 	},
-	"exec": "waybar-module-pomodoro -w 30 -s 10 -l 20 --no-icons",
+	"exec": "waybar-module-pomodoro -w 45 -s 15 -l 30 --no-icons",
 	"on-click": "waybar-module-pomodoro toggle",
 	"on-click-right": "waybar-module-pomodoro reset",
 },
