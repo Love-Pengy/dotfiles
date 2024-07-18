@@ -28,13 +28,11 @@
 - wofi
 - waybar
 - kitty
-- use this instead of ly
-  - <https://git.sr.ht/~kennylevinsen/gtkgreet>
-  - need meson and ninja
 - hyfetch
 
 ## Utils
 
+- samba-client
 - localsend
 - firefox
 - obs studio
@@ -43,6 +41,7 @@
 - use dolphin instead of thunar
 - tree
 - htop
+- ncdu
 
 ## Extras
 
@@ -74,6 +73,7 @@
 - blanket
 - obsidian
 
+
 ## configuration
 
 - sway
@@ -90,10 +90,13 @@
 
 ## NEEDS BY HAND CONFIG
 
+- automatic server mounting
+     - samba credentials file 
+        - https://www.reddit.com/r/linux/comments/cogxiv/my_way_to_automount_a_samba_share/
+
 - firefox
   - enable custom css
     - <https://github.com/Aris-t2/CustomCSSforFx>
-- automatic server mounting
 - neovim (lsp and linters)
   - install the following linters/formatters
     - pylint

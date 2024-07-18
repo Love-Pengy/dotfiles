@@ -1,3 +1,4 @@
+: <<'END'
 declare -A osInfo;
 osInfo[/etc/redhat-release]=yum
 osInfo[/etc/arch-release]=pacman
@@ -22,12 +23,14 @@ do
         
     fi
 done
+END
+
+installHeader="apt install -y"
 
 # ####################### #
 # Important Starting Deps # 
 # ####################### #
 
-$updateString
 $installHeader git 
 
 echo "Please Set Up SSH For Github Now Before Moving On"
@@ -42,7 +45,7 @@ done
 # ##### #
 
 # My Preferred Folders
-mkdir -p ~/pictures ~/documents ~/videos ~/applications ~/downloads ~/projects ~/windowsServer ~/usbMount
+mkdir -p ~/pictures ~/documents ~/videos ~/applications ~/downloads ~/projects ~/server 
 
 # Sway 
 $installHeader sway pactl light playerctl grimshot swayidle swaylock wl-clipboard pipewire pipewire-pulse
@@ -55,32 +58,6 @@ $installHeader waybar
 
 # Kitty
 $installHeader kitty
-
-# gtkgreet
-$installHeader greetd meson ninja
-git clone  https://git.sr.ht/~kennylevinsen/gtkgreet ~/applications/gtkgreet
-cd applications/gtkgreet
-meson build
-ninja -C build
-
-echo "# `-l` activates layer-shell mode. Notice that `swaymsg exit` will run after gtkgreet.
-exec "gtkgreet -l; swaymsg exit"
-
-bindsym Mod4+shift+e exec swaynag \
-	-t warning \
-	-m 'What do you want to do?' \
-	-b 'Poweroff' 'systemctl poweroff' \
-	-b 'Reboot' 'systemctl reboot'
-
-include /etc/sway/config.d/*" > /etc/greetd/sway-config
-
-echo '[terminal]
-vt = 1
-
-[default_session]
-command = "sway --config /etc/greetd/sway-config"
-user = "greeter"' > /etc/greetd/config.toml
-cd 
 
 # hyfetch 
 $installHeader python3 python3-pip
@@ -98,62 +75,12 @@ $installHeader localsend
 $installHeader firefox
 
 # obs
-if [ $installHeader == "apt-get install" ] 
-then 
-    
-$installHeader v4l2loopback-dkms
-$installHeader cmake ninja-build pkg-config clang clang-format build-essential curl ccache git zsh
-$installHeader libavcodec-dev libavdevice-dev libavfilter-dev libavformat-dev libavutil-dev libswresample-dev libswscale-dev libx264-dev libcurl4-openssl-dev libmbedtls-dev libgl1-mesa-dev libjansson-dev libluajit-5.1-dev python3-dev libx11-dev libxcb-randr0-dev libxcb-shm0-dev libxcb-xinerama0-dev libxcb-composite0-dev libxcomposite-dev libxinerama-dev libxcb1-dev libx11-xcb-dev libxcb-xfixes0-dev swig libcmocka-dev libxss-dev libglvnd-dev libgles2-mesa libgles2-mesa-dev libwayland-dev librist-dev libsrt-openssl-dev libpci-dev libpipewire-0.3-dev libqrcodegencpp-dev uthash-dev
-$installHeader \
-       qt6-base-dev \
-       qt6-base-private-dev \
-       libqt6svg6-dev \
-       qt6-wayland \
-       qt6-image-formats-plugins
-$installHeader \
-       libasound2-dev \
-       libfdk-aac-dev \
-       libfontconfig-dev \
-       libfreetype6-dev \
-       libjack-jackd2-dev \
-       libpulse-dev libsndio-dev \
-       libspeexdsp-dev \
-       libudev-dev \
-       libv4l-dev \
-       libva-dev \
-       libvlc-dev \
-       libvpl-dev \
-       libdrm-dev \
-       nlohmann-json3-dev \
-       libwebsocketpp-dev \
-       libasio-dev
-
-##CHANGE IT TO THIS
-# cmake -S . -B build -G Ninja -DCEF_ROOT_DIR="cef_binary_5060_linux64/" -DENABLE_PIPEWIRE=1 -DENABLE_AJA=0 -DENABLE_WEBRTC=0 -DENABLE_PULSEAUDIO=1 -DENABLE_VST=1 -DENABLE_JACK=1 -DENABLE_ALSA=1 -DENABLE_HEVC=1 -DCMAKE_INSTALL_PREFIX=/usr -DBUILD_BROWSER=1 -DENABLE_VLC=1 -DENABLE_WAYLAND=1 -DENABLE_RNNOISE=1 -DENABLE_SPEEXDSP=1 -DENABLE_V4L2=1 -DENABLE_FFMPEG_NVENC=0 -DENABLE_WEBSOCKET=0 -DENABLE_NATIVE_NVENC=OFF
-
-cmake -S . -B ~/applications -G Ninja \
-	-DCEF_ROOT_DIR="../obs-build-dependencies/cef_binary_5060_linux_x86_64" \
-	-DENABLE_PIPEWIRE=ON \
-	-DENABLE_AJA=0 \
-        -DENABLE_WEBRTC=0 \
-	-DQT_VERSION=6
-
-cmake --build ~/applications
-cmake --build ~/applications -t libobs
-cmake --build ~/applications -t clean
-
-cmake --build ~/applications --target package
-
-sudo apt-mark hold obs-studio
-
-$installHeader ./obs-studio-*-*-Linux.deb
-
+add-apt-repository ppa:obsproject/obs-studio
+apt update
+$installHeader obs-studio
 $installHeader xdg-desktop-portal-wlr
-else
-    $installHeader obs-studio
-    $installHeader xdg-desktop-portal-wlr
-    $installHeader v4l2loopback-dkms
-fi
+$installHeader xdg-desktop-portal-wlr
+$installHeader v4l2loopback-dkms
 
 # dolphin
 $installHeader dolphin
@@ -163,6 +90,7 @@ $installHeader tree
 
 # htop
 $installHeader htop
+
 
 
 # ###### #
@@ -183,14 +111,11 @@ $installHeader yt-dlp
 # bc
 $installHeader bc
 
-# cifs-utils (for auto connecting to server)
-$installHeader cifs-utils
+# samba stoofs (for auto connecting to server)
+$installHeader cifs-utils samba-client
 
 # ffmpeg 
 $installHeader ffmpeg
-
-# kdenlive
-$installHeader kdenlive
 
 # lm-sensors 
 $installHeader lm-sensors
@@ -236,8 +161,8 @@ flatpak install blanket
 # ############# #
 
 # sway 
-
-### UNDER THE ASSUMPTION THAT YOU'RE RUNNING THE SCRIPT WITHIN THE DOTFILES DIR AND ITS IN THE HOME DIR
+# UNDER THE ASSUMPTION THAT THIS IS CLONED IN THE HOME DIR
+cd 
 chmod +x ./dotfiles/sway/scripts/dmenu.sh 
 chmod +x ./dotfiles/sway/scripts/kill.sh 
 chmod +x ./dotfiles/sway/scripts/workspaces/move/* 
