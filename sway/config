@@ -95,7 +95,7 @@
     bindsym $mod+Shift+q kill
 
     # start your launcher || delay script is here to give time for the program to launch before setting the border again as wofi returns immediately after start of launch
-    bindsym $mod+d wofi --show=drun -I -i --conf="/home/Bee/.config/wofi/style.css" 
+    bindsym $mod+d exec wofi --show=drun -I -i --conf="/home/Bee/.config/wofi/style.css" 
 
     # Reload the configuration file
     bindsym $mod+Shift+r reload
