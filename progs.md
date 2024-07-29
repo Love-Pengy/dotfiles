@@ -25,6 +25,7 @@
   - swaylock
   - wl-clipboard
   - pipewire, pipewire-pulse
+  - wlogout
 - wofi
 - waybar
 - kitty
@@ -57,6 +58,8 @@
 - network-manager
 - valgrind
   - (I think included)
+- gdb
+- discord
 
 ## pwogwamming
 
@@ -72,7 +75,6 @@
 
 - blanket
 - obsidian
-
 
 ## configuration
 
@@ -91,8 +93,8 @@
 ## NEEDS BY HAND CONFIG
 
 - automatic server mounting
-     - samba credentials file 
-        - https://www.reddit.com/r/linux/comments/cogxiv/my_way_to_automount_a_samba_share/
+  - samba credentials file
+    - <https://www.reddit.com/r/linux/comments/cogxiv/my_way_to_automount_a_samba_share/>
 
 - firefox
   - enable custom css

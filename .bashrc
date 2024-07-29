@@ -92,6 +92,10 @@ alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
 
+alias reboot='systemctl reboot'
+alias suspend='systemctl suspend'
+alias poweroff='systemctl poweroff'
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -123,4 +127,5 @@ bind '"\e[Z":menu-complete-backward'
 
 # do partial completion on the first tab cycle after that 
 bind "set menu-complete-display-prefix on"
+
 

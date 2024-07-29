@@ -25,7 +25,7 @@ do
 done
 END
 
-installHeader="apt install -y"
+installHeader="apt-get install -y"
 
 # ####################### #
 # Important Starting Deps # 
@@ -63,6 +63,9 @@ $installHeader kitty
 $installHeader python3 python3-pip
 pip install -U hyfetch
 
+# wlogout 
+$installHeader wlogout
+
 
 # ##### #
 # Utils # 
@@ -79,7 +82,6 @@ add-apt-repository ppa:obsproject/obs-studio
 apt update
 $installHeader obs-studio
 $installHeader xdg-desktop-portal-wlr
-$installHeader xdg-desktop-portal-wlr
 $installHeader v4l2loopback-dkms
 
 # dolphin
@@ -90,7 +92,6 @@ $installHeader tree
 
 # htop
 $installHeader htop
-
 
 
 # ###### #
@@ -126,6 +127,8 @@ $installHeader network-manager
 # valgrind
 $installHeader valgrind
 
+# gdb 
+$installHeader gdb
 
 # ########### #
 # Pwogwamming # 
@@ -156,6 +159,9 @@ flatpak install obsidian
 # blanket
 flatpak install blanket
 
+# discord 
+flatpak install discord
+
 # ############# #
 # Configuration # 
 # ############# #
@@ -163,10 +169,6 @@ flatpak install blanket
 # sway 
 # UNDER THE ASSUMPTION THAT THIS IS CLONED IN THE HOME DIR
 cd 
-chmod +x ./dotfiles/sway/scripts/dmenu.sh 
-chmod +x ./dotfiles/sway/scripts/kill.sh 
-chmod +x ./dotfiles/sway/scripts/workspaces/move/* 
-chmod +x ./dotfiles/sway/scripts/workspaces/switch/* 
 mv ./dotfiles/sway ~/.config/
 
 # waybar

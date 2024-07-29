@@ -110,11 +110,11 @@
                "format-icons": ["", ""]
    }, 
 	"memory": {
-		"interval": 5,
+		"interval": 1,
 		"format": "Mem {}%"
 	},
 	"cpu": {
-		"interval": 5,
+		"interval": 1,
 		"format": "CPU {usage:2}%"
 	},
 	"battery": {
