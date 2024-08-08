@@ -50,8 +50,8 @@ mkdir -p ~/pictures ~/documents ~/videos ~/applications ~/downloads ~/projects ~
 # Sway 
 $installHeader sway pactl light playerctl grimshot swayidle swaylock wl-clipboard pipewire pipewire-pulse
 
-# Wofi
-$installHeader wofi
+# Tofi
+$installHeader tofi
 
 # Waybar 
 $installHeader waybar

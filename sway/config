@@ -30,7 +30,7 @@
     set $term kitty
 
     # Your preferred application launcher
-    set $menu wofi
+    set $menu tofi-drun --drun-launch=true --font /home/Bee/.local/share/fonts/JetBrainsMonoNLNerdFontMono-Regular.ttf --ascii-input true --hint-font false 
 
     #use pactl to adjust volume in pulse audio
     set $refresh_i3status kill all -SIGUSR1 i3status
@@ -86,7 +86,7 @@
           before-sleep 'swaylock -f -e -i ~/Pictures/lockScreen.png -s tile'
 
     #lock screen with a bg image
-    bindsym $mod+Shift+x exec swaylock -f -e -i ~/Pictures/lockScreen.png -s tile
+    bindsym $mod+Shift+x exec wlogout -p layer-shell
 
     # Start a terminal
     bindsym $mod+Return exec swaymsg 'border pixel 0' & swaymsg "exec $term --single-instance"
@@ -95,7 +95,7 @@
     bindsym $mod+Shift+q kill
 
     # start your launcher || delay script is here to give time for the program to launch before setting the border again as wofi returns immediately after start of launch
-    bindsym $mod+d exec wofi --show=drun --layer=overlay -I -i --conf="/home/Bee/.config/wofi/style.css" 
+    bindsym $mod+d exec $menu 
     # Reload the configuration file
     bindsym $mod+Shift+r reload
 

@@ -26,7 +26,7 @@
   - wl-clipboard
   - pipewire, pipewire-pulse
   - wlogout
-- wofi
+- tofi 
 - waybar
 - kitty
 - hyfetch
