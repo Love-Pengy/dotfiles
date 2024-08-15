@@ -154,7 +154,7 @@ mv $dotfilesLoc/sway ~/.config/
 # waybar
 chmod +x $dotfilesLoc/waybar/network-manager.sh 
 git clone git@github.com:Andeskjerf/waybar-module-pomodoro.git ~/applications/waybar-module-pomodoro
-cd applications/waybar-module-pomodoro
+cd ~/applications/waybar-module-pomodoro
 cargo build --release
 cp ./target/release/waybar-module-pomodoro ~/.local/bin
 cd $dotfilesLoc
@@ -166,7 +166,7 @@ mv $dotfilesLoc/BeeConfig $dotfilesLoc/nvim
 # everything else
 rm -rf ./dotfiles/.git
 rm ./dotfiles/.gitmodules 
-mv '\ls -al ~/dotfiles | grep -v install.sh' ~/.config
+mv '\ls -al $dotfilesLoc | grep -v install.sh' ~/.config
 
 
 
