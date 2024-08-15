@@ -1,30 +1,6 @@
-: <<'END'
-declare -A osInfo;
-osInfo[/etc/redhat-release]=yum
-osInfo[/etc/arch-release]=pacman
-osInfo[/etc/gentoo-release]=emerge
-osInfo[/etc/SuSE-release]=zypp
-osInfo[/etc/debian_version]=apt-get
-osInfo[/etc/alpine-release]=apk
+#!/bin/sh
 
-for f in ${!osInfo[@]}
-do
-    if [[ -f $f ]];then
-        if [ "${osInfo[$f]}" == "apt-get" ]
-        then 
-            installHeader="${osInfo[$f]} install"
-            updateString="apt-get update && apt-get upgrade"
-        fi
-        if [ "${osInfo[$f]}" == "pacman" ]
-        then 
-            installHeader="${osInfo[$f]} -S"
-            updateString="pacman -Syu"
-        fi
-        
-    fi
-done
-END
-
+dotfilesLoc=$PWD
 installHeader="apt-get install -y"
 
 # ####################### #
@@ -139,11 +115,15 @@ $installHeader neovim ripgrep fd
 
 # buildtools
 $installHeader make cmake 
-## requires user input
+## rustup |  requires user input
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# cargo 
+$installHeader cargo 
 
 # nerdfonts
 curl https://api.github.com/repos/ryanoasis/nerd-fonts/tags | grep "tarball_url" | grep -Eo 'https://[^\"]*' | sed  -n '1p' | xargs wget -O - | tar -xz
+mkdir -p ~/.local/share/fonts
 find ./ryanoasis-nerd-fonts-* -name '*.ttf' -exec cp {} ~/.local/share/fonts \;
 rm -rf ./ryanoasis-nerd-fonts-*
 
@@ -154,10 +134,10 @@ rm -rf ./ryanoasis-nerd-fonts-*
 $installHeader flatpak
 
 # obsidian
-flatpak install obsidian
+flatpak install md.obsidian.Obsidian
 
 # blanket
-flatpak install blanket
+flatpak install com.rafaelmardojai.Blanket
 
 # discord 
 flatpak install discord
@@ -167,21 +147,21 @@ flatpak install discord
 # ############# #
 
 # sway 
-# UNDER THE ASSUMPTION THAT THIS IS CLONED IN THE HOME DIR
-cd 
-mv ./dotfiles/sway ~/.config/
+cd $runningDir 
+mkdir ~/.config
+mv $dotfilesLoc/sway ~/.config/
 
 # waybar
-chmod +x waybar/network-manager.sh 
+chmod +x $dotfilesLoc/waybar/network-manager.sh 
 git clone git@github.com:Andeskjerf/waybar-module-pomodoro.git ~/applications/waybar-module-pomodoro
 cd applications/waybar-module-pomodoro
 cargo build --release
 cp ./target/release/waybar-module-pomodoro ~/.local/bin
-cd 
-mv ./dotfiles/waybar ~/.config/
+cd $dotfilesLoc
+mv $dotfilesLoc/waybar ~/.config/
 
 # nvim
-mv ./dotfiles/BeeConfig ./dotfiles/nvim
+mv $dotfilesLoc/BeeConfig $dotfilesLoc/nvim
 
 # everything else
 rm -rf ./dotfiles/.git

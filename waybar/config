@@ -82,10 +82,6 @@
 "custom/pomodoro": {
 	"format": "{} {icon}",
 	"return-type": "json",
-	"format-icons": {
-		"work": "󰔟",
-		"break": "",
-	},
 	"exec": "waybar-module-pomodoro -w 50 -s 10 -l 20 --no-icons",
 	"on-click": "waybar-module-pomodoro toggle",
 	"on-click-right": "waybar-module-pomodoro reset",
