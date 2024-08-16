@@ -134,13 +134,16 @@ rm -rf ./ryanoasis-nerd-fonts-*
 $installHeader flatpak
 
 # obsidian
-flatpak install md.obsidian.Obsidian
+flatpak install md.obsidian.Obsidian/x86_64/stable
 
 # blanket
-flatpak install com.rafaelmardojai.Blanket
+flatpak install com.rafaelmardojai.Blanket/x86_64/stable
 
 # discord 
-flatpak install discord
+#flatpak install com.discordapp.Discord/x86_64/stable
+# vesktop
+curl -s https://api.github.com/repos/Vencord/Vesktop/releases/latest | grep "browser_download_url.*amd64.deb" | cut -d : -f 2,3 | tr -d \" | wget -qi -
+
 
 # ############# #
 # Configuration # 
