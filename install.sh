@@ -143,6 +143,8 @@ flatpak install com.rafaelmardojai.Blanket/x86_64/stable
 #flatpak install com.discordapp.Discord/x86_64/stable
 # vesktop
 curl -s https://api.github.com/repos/Vencord/Vesktop/releases/latest | grep "browser_download_url.*amd64.deb" | cut -d : -f 2,3 | tr -d \" | wget -qi -
+$installHeader ./vesktop-*.amd64.deb
+rm vesktop-*.amd64.deb
 
 
 # ############# #
@@ -167,9 +169,9 @@ mv $dotfilesLoc/waybar ~/.config/
 mv $dotfilesLoc/BeeConfig $dotfilesLoc/nvim
 
 # everything else
-rm -rf ./dotfiles/.git
-rm ./dotfiles/.gitmodules 
-mv '\ls -al $dotfilesLoc | grep -v install.sh' ~/.config
+rm -rf $dotfilesLoc/.git
+rm $dotfilesLoc/.gitmodules 
+find $dotfilesLoc -maxdepth 1 -mindepth 1 -not -name install.sh -exec mv '{}' ~/.config/ \;
 
 
 
