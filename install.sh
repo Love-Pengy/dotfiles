@@ -24,7 +24,7 @@ done
 mkdir -p ~/pictures ~/documents ~/videos ~/applications ~/downloads ~/projects ~/server 
 
 # Sway 
-$installHeader sway pactl light playerctl grimshot swayidle swaylock wl-clipboard pipewire pipewire-pulse
+$installHeader sway pulseaudio-utils light playerctl grimshot swayidle swaylock wl-clipboard pipewire pipewire-pulse
 
 # Tofi
 $installHeader tofi
