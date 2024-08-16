@@ -114,7 +114,7 @@ $installHeader gdb
 # ########### #
 
 # neovim
-$installHeader neovim ripgrep fd
+$installHeader neovim ripgrep fd-find
 
 # buildtools
 $installHeader make cmake 
