@@ -37,7 +37,10 @@ $installHeader kitty
 
 # hyfetch 
 $installHeader python3 python3-pip
-pip install -U hyfetch
+# NOTE: not yet on debian but works on ubuntu base
+$installHeader hyfetch
+# if on debian use this 
+# pip install -U hyfetch
 
 # wlogout 
 $installHeader wlogout
