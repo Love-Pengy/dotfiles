@@ -1,8 +1,9 @@
 #!/bin/sh
 
-set -x 
+#set -x 
 
 dotfilesLoc=$PWD
+UHOME=$(getent passwd $SUDO_USER | cut -d: -f6)
 installHeader="apt-get install -y"
 
 # ####################### #
@@ -21,7 +22,7 @@ done
 # ##### #
 
 # My Preferred Folders
-mkdir ~/Applications ~/Projects ~/Server 
+mkdir $UHOME/Applications $UHOME/Projects $UHOME/Server 
 
 # Sway 
 $installHeader sway pulseaudio-utils light playerctl grimshot swayidle swaylock wl-clipboard pipewire pipewire-pulse
@@ -129,8 +130,8 @@ $installHeader cargo
 
 # nerdfonts
 curl https://api.github.com/repos/ryanoasis/nerd-fonts/tags | grep "tarball_url" | grep -Eo 'https://[^\"]*' | sed  -n '1p' | xargs wget -O - | tar -xz
-mkdir -p ~/.local/share/fonts
-find ./ryanoasis-nerd-fonts-* -name '*.ttf' -exec cp {} ~/.local/share/fonts \;
+mkdir -p $UHOME/.local/share/fonts
+find ./ryanoasis-nerd-fonts-* -name '*.ttf' -exec cp {} $UHOME/.local/share/fonts \;
 rm -rf ./ryanoasis-nerd-fonts-*
 
 # ####### #
@@ -158,24 +159,24 @@ rm vesktop_*_.amd64.deb
 # ############# #
 
 # .profile (firefox force wayland) 
-cp $dotfilesLoc/.profile ~
+cp $dotfilesLoc/.profile $UHOME
 
 # bashrc
-mv $dotfilesLoc/.bashrc ~
+mv $dotfilesLoc/.bashrc $UHOME
 
 # sway 
 cd $dotfilesLoc
-mkdir ~/.config
-mv $dotfilesLoc/sway ~/.config/
+mkdir $UHOME/.config
+mv $dotfilesLoc/sway $UHOME/.config/
 
 # waybar
 chmod +x $dotfilesLoc/waybar/networkmanager.sh 
-git clone git@github.com:Andeskjerf/waybar-module-pomodoro.git ~/applications/waybar-module-pomodoro
-cd ~/applications/waybar-module-pomodoro
+git clone git@github.com:Andeskjerf/waybar-module-pomodoro.git $UHOME/applications/waybar-module-pomodoro
+cd $UHOME/applications/waybar-module-pomodoro
 cargo build --release
-cp ./target/release/waybar-module-pomodoro ~/.local/bin
+cp ./target/release/waybar-module-pomodoro $UHOME/.local/bin
 cd $dotfilesLoc
-mv $dotfilesLoc/waybar ~/.config/
+mv $dotfilesLoc/waybar $UHOME/.config/
 
 # nvim
 mv $dotfilesLoc/BeeConfig $dotfilesLoc/nvim
@@ -183,7 +184,7 @@ mv $dotfilesLoc/BeeConfig $dotfilesLoc/nvim
 # everything else
 rm -rf $dotfilesLoc/.git
 rm $dotfilesLoc/.gitmodules 
-find $dotfilesLoc -maxdepth 1 -mindepth 1 -not -name install.sh -exec mv '{}' ~/.config/ \;
+find $dotfilesLoc -maxdepth 1 -mindepth 1 -not -name install.sh -exec mv '{}' $UHOME/.config/ \;
 
 
 
