@@ -51,7 +51,10 @@ $installHeader wlogout
 # ##### #
 
 # local send
-$installHeader localsend
+# $installHeader localsend
+curl -s https://api.github.com/repos/localsend/localsend/releases/latest | grep "browser_download_url.*linux-x86-64.deb" | cut -d : -f 2,3 | tr -d \" | wget -qi -
+$installHeader ./LocalSend-*-linux-x86-64.deb
+rm LocalSend-*-linux-x86-64.deb
 
 # firefox
 $installHeader firefox
@@ -146,7 +149,7 @@ flatpak install com.rafaelmardojai.Blanket/x86_64/stable
 #flatpak install com.discordapp.Discord/x86_64/stable
 # vesktop
 curl -s https://api.github.com/repos/Vencord/Vesktop/releases/latest | grep "browser_download_url.*amd64.deb" | cut -d : -f 2,3 | tr -d \" | wget -qi -
-$installHeader ./vesktop_*_.amd64.deb
+$installHeader ./vesktop_*_amd64.deb
 rm vesktop-*.amd64.deb
 
 
