@@ -146,7 +146,7 @@ flatpak install com.rafaelmardojai.Blanket/x86_64/stable
 #flatpak install com.discordapp.Discord/x86_64/stable
 # vesktop
 curl -s https://api.github.com/repos/Vencord/Vesktop/releases/latest | grep "browser_download_url.*amd64.deb" | cut -d : -f 2,3 | tr -d \" | wget -qi -
-$installHeader ./vesktop-*.amd64.deb
+$installHeader ./vesktop_*_.amd64.deb
 rm vesktop-*.amd64.deb
 
 
@@ -160,7 +160,7 @@ mkdir ~/.config
 mv $dotfilesLoc/sway ~/.config/
 
 # waybar
-chmod +x $dotfilesLoc/waybar/network-manager.sh 
+chmod +x $dotfilesLoc/waybar/networkmanager.sh 
 git clone git@github.com:Andeskjerf/waybar-module-pomodoro.git ~/applications/waybar-module-pomodoro
 cd ~/applications/waybar-module-pomodoro
 cargo build --release
