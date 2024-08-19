@@ -19,9 +19,10 @@
     # get screensharing working on obs
     exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
     exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+    exec export MOZ_ENABLE_WAYLAND=1
 
     # xwayland stuff
-    #xwayland enable
+    xwayland enable
 
     # Logo key. Use Mod1 for Alt.
     set $mod Mod1

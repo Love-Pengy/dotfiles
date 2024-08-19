@@ -154,8 +154,17 @@ rm vesktop-*.amd64.deb
 # Configuration # 
 # ############# #
 
+# .profile (firefox force wayland) 
+echo "# Firefox wayland:
+if [ "$XDG_SESSION_TYPE" == "wayland" ]; then
+    export MOZ_ENABLE_WAYLAND=1
+fi" >> ~/.profile
+
+# bashrc
+mv $dotfilesLoc/.bashrc ~
+
 # sway 
-cd $runningDir 
+cd $dotfilesLoc
 mkdir ~/.config
 mv $dotfilesLoc/sway ~/.config/
 
