@@ -1,13 +1,13 @@
 #!/bin/sh
 
+set -x 
+
 dotfilesLoc=$PWD
 installHeader="apt-get install -y"
 
 # ####################### #
 # Important Starting Deps # 
 # ####################### #
-
-$installHeader git 
 
 echo "Please Set Up SSH For Github Now Before Moving On"
 input="init"
@@ -21,7 +21,7 @@ done
 # ##### #
 
 # My Preferred Folders
-mkdir -p ~/pictures ~/documents ~/videos ~/applications ~/downloads ~/projects ~/server 
+mkdir ~/Applications ~/Projects ~/Server 
 
 # Sway 
 $installHeader sway pulseaudio-utils light playerctl grimshot swayidle swaylock wl-clipboard pipewire pipewire-pulse
@@ -158,10 +158,7 @@ rm vesktop_*_.amd64.deb
 # ############# #
 
 # .profile (firefox force wayland) 
-echo "# Firefox wayland:
-if [ "$XDG_SESSION_TYPE" == "wayland" ]; then
-    export MOZ_ENABLE_WAYLAND=1
-fi" >> ~/.profile
+cp $dotfilesLoc/.profile ~
 
 # bashrc
 mv $dotfilesLoc/.bashrc ~
