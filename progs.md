@@ -13,8 +13,6 @@
   - Applications
   - Downloads
   - Projects
-  - Windows_Server
-  - USBMount
 
 - sway
   - pactl
@@ -39,7 +37,7 @@
 - obs studio
   - build from source so you actually get the whole thing
   - install xdg-desktop-portal-wlr (I think)
-- use dolphin instead of thunar
+- dolphin
 - tree
 - htop
 - ncdu
@@ -50,7 +48,6 @@
   - need go for this
 - vlc
 - yt-dlp
-- bc
 - cifs-utils
 - ffmpeg
 - kdenlive
@@ -59,7 +56,7 @@
 - valgrind
   - (I think included)
 - gdb
-- discord
+- vesktop
 
 ## pwogwamming
 
@@ -78,24 +75,24 @@
 
 ## configuration
 
-- sway
-  - make scripts executable
-    - kill.sh
-    - dmenu.sh
-    - all switchWS scripts
-    - all moveWS scripts
 - waybar
   - make networkmanager executable
   - compile and move waybar-module-pomodoro into ~/.local/bin
 -obs-studio
-    - setup keystroke-display
 
 ## NEEDS BY HAND CONFIG
 
 - automatic server mounting
   - samba credentials file
     - <https://www.reddit.com/r/linux/comments/cogxiv/my_way_to_automount_a_samba_share/>
-
+    - steps: 
+        - create file in /etc/smbcredentials
+        - sudo chmod 600 /etc/smbcredentials
+        - add following to fstab
+            - ```ip/shareName /mnt/desiredFolder cifs credentials=/etc/smbcredentials,noperm,file_mode=0777,dir_mode=0777,iocharset=utf8,noauto,nofail 0 0``` 
+        - make mount dir
+        - now good to go 
+        - mount with sudo mount -a
 - firefox
   - enable custom css
     - <https://github.com/Aris-t2/CustomCSSforFx>

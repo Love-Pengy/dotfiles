@@ -22,7 +22,7 @@ done
 # ##### #
 
 # My Preferred Folders
-mkdir $UHOME/Applications $UHOME/Projects $UHOME/Server 
+mkdir $UHOME/Applications $UHOME/Projects  
 
 # Sway 
 $installHeader sway pulseaudio-utils light playerctl grimshot swayidle swaylock wl-clipboard pipewire pipewire-pulse
@@ -67,6 +67,9 @@ $installHeader obs-studio
 $installHeader xdg-desktop-portal-wlr
 $installHeader v4l2loopback-dkms
 
+#ncdu 
+$installHeader ncdu
+
 # dolphin
 $installHeader dolphin
 
@@ -91,9 +94,6 @@ $installHeader vlc
 
 # yt-dlp
 $installHeader yt-dlp
-
-# bc
-$installHeader bc
 
 # samba stoofs (for auto connecting to server)
 $installHeader cifs-utils samba-client
@@ -122,6 +122,7 @@ $installHeader neovim ripgrep fd-find
 
 # buildtools
 $installHeader make cmake 
+
 ## rustup |  requires user input
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
@@ -146,8 +147,6 @@ flatpak install md.obsidian.Obsidian/x86_64/stable
 # blanket
 flatpak install com.rafaelmardojai.Blanket/x86_64/stable
 
-# discord 
-#flatpak install com.discordapp.Discord/x86_64/stable
 # vesktop
 curl -s https://api.github.com/repos/Vencord/Vesktop/releases/latest | grep "browser_download_url.*amd64.deb" | cut -d : -f 2,3 | tr -d \" | wget -qi -
 $installHeader ./vesktop_*_amd64.deb
@@ -183,8 +182,10 @@ mv $dotfilesLoc/BeeConfig $dotfilesLoc/nvim
 
 # everything else
 rm -rf $dotfilesLoc/.git
+rm $dotfilesLoc/README.md
+rm $dotfilesLoc/progs.md
 rm $dotfilesLoc/.gitmodules 
-find $dotfilesLoc -maxdepth 1 -mindepth 1 -not -name install.sh -exec mv '{}' $UHOME/.config/ \;
+find $dotfilesLoc -maxdepth 1 -mindepth 1 -not -name install.sh -not -name firefox -exec mv '{}' $UHOME/.config/ \;
 
 
 
