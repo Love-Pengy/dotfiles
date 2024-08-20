@@ -6,6 +6,6 @@
 
 clone with ```git clone --recursive```
 
-to run install use: ``` sudo -H -s ./install.sh ```
+to run install use: ``` sudo ./install.sh ```
 - to understand what this command does refer to man sudoers 
 
