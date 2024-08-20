@@ -3,6 +3,7 @@
 ## Important
 
 - git
+- THE TEST FILE 
 
 ## Setup
 

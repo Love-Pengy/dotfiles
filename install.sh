@@ -187,7 +187,8 @@ rm $dotfilesLoc/progs.md
 rm $dotfilesLoc/.gitmodules 
 find $dotfilesLoc -maxdepth 1 -mindepth 1 -not -name install.sh -not -name firefox -exec mv '{}' $UHOME/.config/ \;
 
-
+# THE TEST FILE OF ALL TIME
+touch $UHOME/test.c
 
 
 
