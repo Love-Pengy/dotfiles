@@ -51,6 +51,8 @@ $installHeader wlogout
 # Utils # 
 # ##### #
 
+# C man pages
+$installHeader manpages-dev manpages-posix-dev
 # local send
 # $installHeader localsend
 curl -s https://api.github.com/repos/localsend/localsend/releases/latest | grep "browser_download_url.*linux-x86-64.deb" | cut -d : -f 2,3 | tr -d \" | wget -qi -

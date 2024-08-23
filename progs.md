@@ -42,6 +42,8 @@
 - tree
 - htop
 - ncdu
+- manpages-dev
+- manpages-posix-dev
 
 ## Extras
 
