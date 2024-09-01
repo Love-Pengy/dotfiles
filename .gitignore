@@ -1,0 +1,14 @@
+/**
+!/.gitignore
+!/.config/
+/.config/**
+!/.config/dunst
+!/.config/kitty/*
+!/.config/nemo/*
+!/.config/sway/*
+!/.config/tofi/*
+!/.config/waybar/*
+!/.config/wlogout/*
+!backup.sh
+!.bashrc
+!.profile
