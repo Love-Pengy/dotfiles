@@ -1,7 +1,7 @@
 Dotfiles for my current setup!
 
-![Main Look](./assets/terminal.png)
-![D Menu](./assets/tofi.png)
+![Main Look](./.config/assets/terminal.png)
+![D Menu](./.config/assets/tofi.png)
 
 **NOTES:** 
 - I am not responsible for you messing up your system with the install script. As you
