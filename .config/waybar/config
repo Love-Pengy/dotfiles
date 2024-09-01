@@ -1,0 +1,157 @@
+// -*- mode: json -*-
+
+{
+	"layer": "top",
+	"position": "top",
+    "height": 26, 
+	"modules-left": [
+		"sway/workspaces",
+		"custom/right-arrow-dark", 
+		"custom/right-arrow-light", 
+        "network", 
+		"custom/right-arrow-dark",
+		"custom/right-arrow-light",
+        "custom/pomodoro", 
+        "custom/right-arrow-dark", 
+        "custom/right-arrow-light", 
+        "pulseaudio", 
+		"custom/right-arrow-dark",
+
+	],
+	"modules-center": [
+		"custom/left-arrow-dark",
+		"clock#1",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"clock#2",
+		"custom/right-arrow-dark",
+		"custom/right-arrow-light",
+		"clock#3",
+		"custom/right-arrow-dark"
+	],
+	"modules-right": [
+		"custom/left-arrow-dark",
+		"memory",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"cpu",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"battery", 
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"disk",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"tray"
+	],
+
+	"custom/left-arrow-dark": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/left-arrow-light": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/right-arrow-dark": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/right-arrow-light": {
+		"format": "",
+		"tooltip": false
+	},
+	"sway/workspaces": {
+		"disable-scroll": true,
+		"format": "{name}"
+	},
+	"clock#1":{
+		"format": "{:%a}",
+		"tooltip": false
+	}, 
+	"clock#2": {
+		"format": "{:%I:%M %p}",
+		"tooltip": false
+	},
+	"clock#3": {
+		"format": "{:%m-%d}",
+		"tooltip": false
+	},
+    
+"custom/pomodoro": {
+	"format": "{} {icon}",
+	"return-type": "json",
+	"exec": "waybar-module-pomodoro -w 50 -s 10 -l 20 --no-icons",
+	"on-click": "waybar-module-pomodoro toggle",
+	"on-click-right": "waybar-module-pomodoro reset",
+},
+	"pulseaudio": {
+		"format": "{icon} {volume:2}%",
+		"format-bluetooth": "{icon}  {volume}%",
+		"format-muted": "󰝟",
+		"format-icons": {
+			"headphones": "",
+			"default": [
+				"",
+				""
+			]
+		},
+		"scroll-step": 5,
+		"on-click": "pavucontrol",
+	},
+    "backlight": {
+               "device": "intel_backlight",
+               "format": "{percent}% {icon}",
+               "format-icons": ["", ""]
+   }, 
+	"memory": {
+		"interval": 1,
+		"format": "Mem {}%"
+	},
+	"cpu": {
+		"interval": 1,
+		"format": "CPU {usage:2}%"
+	},
+	"battery": {
+		"states": {
+			"good": 80,
+			"warning": 50,
+			"critical": 20
+		},
+		"format": "{icon}  {capacity}%",
+		"format-icons": [
+			"",
+			"",
+			"",
+			"",
+			""
+		], 
+        "format-charging": "󰂄 {capacity}%" 
+	},
+    //from https://gitlab.com/stephan-raabe/dotfiles/-/blob/main/waybar/modules.json?ref_type=heads
+     "network": {
+        "format": "{ifname}",
+        //"format-wifi": "  {signalStrength}%",
+        "format-wifi": " ",
+        //"format-ethernet": "  {ifname}",
+        "format-ethernet": "󰈀",  
+        "format-disconnected": "\udb81\uddaa",
+        "tooltip-format": " {ifname} via {gwaddri}",
+        "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
+        "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50,
+        "on-click": "~/.config/waybar/networkmanager.sh"
+    },
+	"disk": {
+		"interval": 10,
+		"format": "Disk {percentage_used:2}%",
+		"path": "/"
+	},
+	"tray": {
+		"icon-size": 17, 
+        "spacing": 7
+	}
+}
+
