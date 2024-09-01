@@ -25,6 +25,9 @@
 !.config/wlogout
 !/.config/wlogout/*
 
+!.config/assets
+!/.config/assets/*
+
 !/.mozilla/
 /.mozilla/**
 !.mozilla/firefox/
