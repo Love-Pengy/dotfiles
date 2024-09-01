@@ -31,7 +31,7 @@
     set $term kitty --single-instance
 
     # Your preferred application launcher
-    set $menu tofi-drun --drun-launch=true --font /home/Bee/.local/share/fonts/JetBrainsMonoNLNerdFontMono-Regular.ttf --ascii-input true --hint-font false --fuzzy-match true 
+    set $menu tofi-drun --drun-launch=true --font /home/Bee/.local/share/fonts/JetBrainsMonoNLNerdFontMono-Regular.ttf --ascii-input true --hint-font false  
 
     #use pactl to adjust volume in pulse audio
     set $refresh_i3status kill all -SIGUSR1 i3status
@@ -84,7 +84,7 @@
     exec swayidle -w \
           timeout 600 'swaylock -f -e -i ~/Pictures/lockScreen.png -s tile' \
           timeout 900 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-          before-sleep 'swaylock -f -e -i ~/Pictures/lockScreen.png -s tile'
+          before-sleep 'swaylock -f -e -i ~/Pictures/lockScreen.png -s stretch'
 
     #lock screen with a bg image
     bindsym $mod+Shift+x exec wlogout -p layer-shell
@@ -217,8 +217,8 @@
 ### ASSIGNMENTS
 
     assign [app_id="com.obsproject.Studio"] 6 
-    assign [app_id="obsidian"] 3
-    assign [class="discord"] 4
+    assign [class="obsidian"] 3
+    assign [class="vesktop"] 4
 
     #  smarter splitting cause im lazy :3
     for_window [app_id="kitty"] split toggle ; opacity .97 
