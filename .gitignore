@@ -4,6 +4,10 @@
 !/.config/
 /.config/**
 
+
+!.config/progs.md
+!.config/install.sh
+
 !.config/nvim
 !.config/nvim/* 
 
