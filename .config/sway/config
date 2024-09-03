@@ -17,7 +17,7 @@
     client.unfocused "#000000" "#000000" "#000000" "#000000"
 
     # get screensharing working on obs
-    exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+    #exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
     exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
     exec export MOZ_ENABLE_WAYLAND=1
 
