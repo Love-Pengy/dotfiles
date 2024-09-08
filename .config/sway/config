@@ -82,7 +82,7 @@
     output * bg ~/Pictures/wallpaper.png fill
 
     exec swayidle -w \
-          timeout 600 'swaylock -f -e -i ~/Pictures/lockScreen.png -s tile' \
+          timeout 600 'swaylock -f -e -i ~/Pictures/lockScreen.png -s stretch' \
           timeout 900 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
           before-sleep 'swaylock -f -e -i ~/Pictures/lockScreen.png -s stretch'
 

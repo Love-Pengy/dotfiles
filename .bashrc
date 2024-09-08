@@ -128,4 +128,5 @@ bind '"\e[Z":menu-complete-backward'
 # do partial completion on the first tab cycle after that 
 bind "set menu-complete-display-prefix on"
 
-
+# for java white screen thingy 
+export _JAVA_AWT_WM_NONREPARENTING=1
