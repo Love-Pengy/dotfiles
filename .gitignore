@@ -35,6 +35,10 @@
 !.config/assets
 !/.config/assets/*
 
+!.config/vesktop
+!/.config/vesktop/themes
+!/.config/vesktop/themes/*
+
 !/.mozilla/
 /.mozilla/**
 !.mozilla/firefox/
