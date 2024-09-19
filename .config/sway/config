@@ -40,9 +40,9 @@
     bindsym XF86AudioMute exec  pactl set-sink-mute @DEFAULT_SINK@ toggle 
 
     #use light to change brightness of display
-    exec  light -N 5
-    bindsym XF86MonBrightnessUp exec light -A 10
-    bindsym XF86MonBrightnessDown exec light -U 10 
+    exec sudo light -N 5
+    bindsym XF86MonBrightnessUp exec sudo light -A 10
+    bindsym XF86MonBrightnessDown exec sudo light -U 10 
 
     #multimedia keys
     bindsym XF86AudioPlay exec playerctl play-pause
