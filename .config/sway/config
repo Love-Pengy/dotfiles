@@ -79,12 +79,12 @@
 ### Behavior
 
     # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-    output * bg ~/Pictures/wallpaper.png fill
+    output * bg ~/Pictures/lockScreen.png fill
 
     exec swayidle -w \
-          timeout 600 'swaylock -f -e -i ~/Pictures/lockScreen.png -s stretch' \
+          timeout 600 'swaylock -f -e -i ~/Pictures/lockScreen.png -s fill' \
           timeout 900 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-          before-sleep 'swaylock -f -e -i ~/Pictures/lockScreen.png -s stretch'
+          before-sleep 'swaylock -f -e -i ~/Pictures/lockScreen.png -s fill'
 
     #lock screen with a bg image
     bindsym $mod+Shift+x exec wlogout -p layer-shell
@@ -176,8 +176,8 @@
     bindsym $mod+Shift+0 move container to workspace number 10
 
     # make gaps between windows
-    gaps inner 3
-    gaps outer -3
+    #gaps inner 3
+    #gaps outer -3
 
 
     # Make the current focus fullscreen
@@ -221,7 +221,7 @@
     assign [class="vesktop"] 4
 
     #  smarter splitting cause im lazy :3
-    for_window [app_id="kitty"] split toggle ; opacity .97 
+    for_window [app_id="kitty"] split toggle ; #opacity .97 
     
 
 
