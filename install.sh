@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #set -x 
-
+# use cat example.list | xargs sudo apt-get -y install next time
 dotfilesLoc=$PWD
 UHOME=$(getent passwd $SUDO_USER | cut -d: -f6)
 installHeader="apt-get install -y"
@@ -50,6 +50,9 @@ $installHeader wlogout
 # ##### #
 # Utils # 
 # ##### #
+
+# gnu stow 
+$installHeader stow
 
 # C man pages
 $installHeader manpages-dev manpages-posix-dev

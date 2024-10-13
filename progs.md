@@ -33,6 +33,7 @@
 
 ## Utils
 
+- gnu stow 
 - citrix workspace
 - samba-client
 - localsend
