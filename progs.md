@@ -25,6 +25,7 @@
   - wl-clipboard
   - pipewire, pipewire-pulse
   - wlogout
+  - dunst
 - tofi 
 - waybar
 - kitty
@@ -32,13 +33,13 @@
 
 ## Utils
 
+- citrix workspace
 - samba-client
 - localsend
 - firefox
 - obs studio
-  - build from source so you actually get the whole thing
+  - add ppa instead of system package
   - install xdg-desktop-portal-wlr (I think)
-- dolphin
 - tree
 - htop
 - ncdu
@@ -47,17 +48,13 @@
 
 ## Extras
 
-- typeocia
-  - need go for this
 - vlc
 - yt-dlp
 - cifs-utils
 - ffmpeg
-- kdenlive
 - lm-sensors
 - network-manager
 - valgrind
-  - (I think included)
 - gdb
 - vesktop
 
@@ -65,15 +62,14 @@
 
 - neovim
   - ripgrep
-  - fd
+  - fd-find
 - make
 - cmake
-- rust/cargo or whatever
+- rust/cargo 
 - nerdfonts  
 
 ## flathub
 
-- blanket
 - obsidian
 
 ## configuration
@@ -115,5 +111,4 @@
     - stylua
 
 - move bg to ~/Pictures/wallpaper.png
-- add league lofi sounds to blanket
 - setup qmk
