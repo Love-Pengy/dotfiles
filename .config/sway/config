@@ -79,7 +79,7 @@
 ### Behavior
 
     # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-    output * bg ~/Pictures/lockScreen.png fill
+    output * bg `$HOME/.config/sway/random_bg` fill
 
     exec swayidle -w \
           timeout 600 'swaylock -f -e -i ~/Pictures/lockScreen.png -s fill' \

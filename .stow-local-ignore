@@ -1,0 +1,8 @@
+^/README.*
+^/LICENSE.*
+\.git
+\.gitignore
+\.gitmodules
+\.config\assets
+\.install.sh
+\.progs.md
