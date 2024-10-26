@@ -181,6 +181,7 @@ cargo build --release
 cp ./target/release/waybar-module-pomodoro $UHOME/.local/bin
 cd $dotfilesLoc
 mv $dotfilesLoc/waybar $UHOME/.config/
+cargo install wallust 
 
 # nvim
 mv $dotfilesLoc/BeeConfig $dotfilesLoc/nvim

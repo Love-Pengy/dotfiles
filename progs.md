@@ -33,6 +33,8 @@
 
 ## Utils
 
+- wallust
+    - https://codeberg.org/explosion-mental/wallust
 - gnu stow 
 - citrix workspace
 - samba-client

@@ -1,104 +1,169 @@
+/*https://github.com/brunoanesio/waybar-config/tree/main?tab=readme-ov-file*/
+@import 'waybarColors.css'; 
 * {
-	font-size: 18px;
-	font-family: "HackNerdFont";
+  min-height: 0;
+  font-family:  "HackNerdFont";
+  font-size: 16px;
+  font-weight: 600;
 }
+
 
 window#waybar {
-	background: #292b2e;
-	color: #fdf6e3;
-
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  /* background-color: #1e1e2e; */
+  /* background-color: #181825; */
+  background-color: transparent; /*rgba(24, 24, 37, 0.4);*/ 
 }
 
-#custom-right-arrow-dark,
-#custom-left-arrow-dark {
-	color: #1a1a1a;
-}
-#custom-right-arrow-light,
-#custom-left-arrow-light {
-	color: #292b2e;
-	background: #1a1a1a;
+window#waybar.hidden {
+  opacity: 0.5;
 }
 
-#workspaces,
-#clock.1,
-#clock.2,
-#clock.3,
-#pulseaudio,
-#backlight, 
-#memory,
-#cpu,
-#battery,
-#disk,
-#custom-pomodoro, 
-#network, 
-#tray {
-	background: #1a1a1a;
+#workspaces {
+  background-color: transparent;
 }
 
 #workspaces button {
-	padding: 0 2px;
-    color: #555555;
-}
-#workspaces button.focused {
-    color: #ffcacb;
-}
-#workspaces button:hover {
-	box-shadow: inherit;
-	text-shadow: inherit;
-}
-#workspaces button:hover {
-	background: #1a1a1a;
-	border: #1a1a1a;
-	padding: 0 3px;
+  all: initial;
+  min-width: 0;
+  box-shadow: inset 0 -3px transparent;
+  padding: 2px 10px;
+  min-height: 0;
+  margin: 4px 4px;
+  border-radius: 4px;
+  /* background-color: #181825; */
+  background-color: @background; /*#1e1e2e;*/
+  color: @foreground; /*#cdd6f4;*/
 }
 
-#pulseaudio {
-	color: #2aa198;
-}
-#backlight{
-    color: #268bd2;
-}
-#memory {
-	color: #2aa198;
-}
-#cpu {
-	color: #6c71c4;
+#workspaces button:hover {
+  box-shadow: inherit;
+  text-shadow: inherit;
+  color: #1e1e2e;
 }
 
-#custom-pomodoro.work{
-    color: #FF474C; 
+/*
+#workspaces button.active {
+  color: #1e1e2e;
+  background-color: #89b4fa;
 }
-#custom-pomodoro.break{
-    color: #D3B683; 
+*/
+#workspaces button.focused{
+  color: @color1; /*#1e1e2e;*/
+  background-color: @color15; /*#89b4fa;*/
 }
-#battery {
-	color: #859900;
-}
-#battery.warning{ 
-	color: #FFA500;
-}
-#battery.critical{
-    color: #FF0000;
-}
-#disk {
-	color: #b58900;
-}
-#network{
-	color: #6c71c4;
-}
-#network.disconnected{
-    color: #FF0000;
+
+#workspaces button.urgent {
+  color: @color1; /*#1e1e2e;*/
+  background-color: #f38ba8;
 }
 
 #clock,
 #pulseaudio,
-#backlight,
-#memory,
-#cpu,
+#custom-logo,
+#custom-power,
 #network, 
-#custom-pomodoro, 
-#battery,
-#disk {
-	padding: 0 10px;
+#cpu,
+#tray,
+#memory, 
+#battery, 
+#window {
+  min-height: 0;
+  padding: 2px 10px;
+  border-radius: 4px;
+  margin: 4px 4px;
+  /* background-color: #181825; */
+  background-color: @color0; /*#1e1e2e;*/
 }
 
+#custom-sep {
+  padding: 0px;
+  color: #585b70;
+}
+/*
+#custom-spotify.playing {
+  color: #a6e3a1;
+}
+
+#custom-spotify.liked {
+  color: #cba6f7;
+}
+#custom-spotify.added {
+  color: #f9e2af;
+}
+
+#custom-spotify.removed {
+  color: #f38ba8;
+}
+
+#custom-spotify.paused {
+  color: #9399b2;
+}
+*/
+
+window#waybar.empty #window {
+  background-color: transparent;
+}
+
+#network{
+	color: @color2; /*#6c71c4*/;
+}
+
+#network.disconnected{
+    color: #FF0000;
+}
+
+#cpu {
+  color: @color3; /*#94e2d5;*/
+}
+
+#memory {
+  color: @color4; /*#cba6f7;*/
+}
+
+#clock {
+  color: @color5; /*#74c7ec;*/
+}
+
+#clock.simpleclock {
+  color: @color6; /*#89b4fa;*/
+}
+
+#window {
+  color: #a6e3a1;
+}
+
+#pulseaudio {
+  color: @color7; /*#b4befe;*/
+}
+
+#pulseaudio.muted {
+  color: @color7; /*#a6adc8;*/
+}
+
+#custom-logo {
+  color: #89b4fa;
+}
+
+/*
+#custom-power {
+  color: #f38ba8;
+  padding-right: 5px;
+  font-size: 14px;
+}
+*/
+#battery {
+  color: @color8; 
+}
+
+@keyframes blink {
+  to {
+    background-color: #f38ba8;
+    color: #181825;
+  }
+}
+
+tooltip {
+  background-color: #181825;
+}

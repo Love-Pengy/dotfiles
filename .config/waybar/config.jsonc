@@ -1,0 +1,110 @@
+/*https://github.com/brunoanesio/waybar-config/tree/main?tab=readme-ov-file*/
+{
+  "layer": "top",
+  "position": "top",
+  "height": 35,
+  "spacing": 0,
+  "exclusive": true,
+  "gtk-layer-shell": true,
+  "passthrough": false,
+  "fixed-center": true,
+  "modules-left": ["sway/workspaces"],
+  "modules-center": ["clock#simpleclock"],
+  "modules-right": [
+    "network", 
+    "cpu",
+    "memory",
+    "pulseaudio",
+    "clock",
+    "battery", 
+    "tray",
+  ],
+  /*
+  "custom/spotify": {
+    "format": "  {}",
+    "return-type": "json",
+    "on-click": "playerctl -p spotify play-pause",
+    "on-click-right": "spotifatius toggle-liked",
+    "on-click-middle": "playerctl -p spotify next",
+    "exec": "spotifatius monitor",
+  },
+  */
+  "sway/workspaces": {
+    "on-click": "activate",
+    "format": "{name}",
+    "all-outputs": true,
+    "disable-scroll": false,
+    "active-only": false,
+  },
+  "tray": {
+    "show-passive-items": true,
+    "spacing": 10,
+  },
+  "clock#simpleclock": {
+    "tooltip": false,
+    "format": "  {:%I:%M}",
+  },
+  "clock": {
+    "format": "  {:%a, %b %d}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+  },
+  //from https://gitlab.com/stephan-raabe/dotfiles/-/blob/main/waybar/modules.json?ref_type=heads
+  "network": {
+    "format": "{ifname}",
+    //"format-wifi": "  {signalStrength}%",
+    "format-wifi": " ", 
+    //"format-ethernet": "  {ifname}",
+    "format-ethernet": "󰈀",  
+    "format-disconnected": "\udb81\uddaa",
+    "tooltip-format": " {ifname} via {gwaddri}",
+    "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
+    "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 50,
+    "on-click": "~/.config/waybar/networkmanager.sh"
+  },
+  "cpu": {
+    "format": "  {usage}%",
+    "tooltip": true,
+    "interval": 1,
+  },
+  "memory": {
+    "format": "  {used:0.2f} GB",
+  },
+  "pulseaudio": {
+    "format": "{icon}{volume}%",
+    "format-muted": "  muted",
+    "format-icons": {
+      "headphone": " ",
+      "default": [" ", " ", " "],
+    },
+    "on-click": "pavucontrol",
+  },
+  "custom/sep": {
+    "format": "|",
+    "tooltip": false,
+  },
+  "battery": {
+		"states": {
+			"good": 80,
+			"warning": 50,
+			"critical": 20
+		},
+		"format": "{icon}  {capacity}%",
+		"format-icons": [
+			"",
+			"",
+			"",
+			"",
+			""
+		], 
+        "format-charging": "󰂄 {capacity}%" 
+	},
+  /*
+  "custom/power": {
+    "tooltip": false,
+    "on-click": "wlogout -p layer-shell &",
+    "format": "⏻ ",
+  },
+*/
+}

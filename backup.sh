@@ -1,3 +1,3 @@
 #!/bin/sh
-cp -u ~/Videos/OBS/* /mnt/server/YoutubeVideos/
+sudo cp -u ~/Videos/OBS/* /mnt/server/YoutubeVideos/
 

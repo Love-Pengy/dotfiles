@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # https://github.com/pengux/dotfiles/blob/pn/wayland/.config/sway/random_bg
 import glob
+import os
 import random
 import sys
 from os.path import expanduser
@@ -12,4 +13,7 @@ if len(args) == 0:
 walls = list()
 for source in args:
     walls += glob.glob(f"{homeDir}/Pictures/Wallpapers/" + source + "/*.*")
+chosen = random.choice(walls)
+os.system(f"wallust run {chosen}");
 print(random.choice(walls))
+
