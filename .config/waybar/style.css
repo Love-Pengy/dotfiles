@@ -108,6 +108,7 @@ window#waybar.empty #window {
 
 #network{
 	color: @color2; /*#6c71c4*/;
+  background-color: @color15;
 }
 
 #network.disconnected{
@@ -115,27 +116,32 @@ window#waybar.empty #window {
 }
 
 #cpu {
-  color: @color3; /*#94e2d5;*/
+  color: @color4; /*#94e2d5;*/
+  background-color: @color15; 
 }
 
 #memory {
-  color: @color4; /*#cba6f7;*/
+  color: @color2; /*#cba6f7;*/
+  background-color: @color15;
 }
 
 #clock {
-  color: @color5; /*#74c7ec;*/
+  color: @color2; /*#74c7ec;*/
+  background-color: @color15;
 }
 
 #clock.simpleclock {
-  color: @color6; /*#89b4fa;*/
+  color: @color4; /*#89b4fa;*/
 }
 
 #window {
   color: #a6e3a1;
+  background-color: @color15;
 }
 
 #pulseaudio {
-  color: @color7; /*#b4befe;*/
+  color: @color4; /*#b4befe;*/
+  background-color: @color15;
 }
 
 #pulseaudio.muted {
@@ -144,6 +150,7 @@ window#waybar.empty #window {
 
 #custom-logo {
   color: #89b4fa;
+  background-color: @color15;
 }
 
 /*
@@ -154,7 +161,8 @@ window#waybar.empty #window {
 }
 */
 #battery {
-  color: @color8; 
+  color: @color4; 
+  background-color: @color15;
 }
 
 @keyframes blink {
@@ -165,5 +173,5 @@ window#waybar.empty #window {
 }
 
 tooltip {
-  background-color: #181825;
+  background-color: @background;
 }

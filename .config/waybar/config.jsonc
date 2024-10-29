@@ -1,6 +1,6 @@
 /*https://github.com/brunoanesio/waybar-config/tree/main?tab=readme-ov-file*/
 {
-  "layer": "top",
+  "layer": "bottom",
   "position": "top",
   "height": 35,
   "spacing": 0,

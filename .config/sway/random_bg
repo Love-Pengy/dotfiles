@@ -14,6 +14,6 @@ walls = list()
 for source in args:
     walls += glob.glob(f"{homeDir}/Pictures/Wallpapers/" + source + "/*.*")
 chosen = random.choice(walls)
-os.system(f"wallust run {chosen}");
+os.system(f"wallust run -q {chosen}");
 print(random.choice(walls))
 
