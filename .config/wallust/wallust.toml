@@ -11,7 +11,7 @@
 
 # How the image is parse, in order to get the colors:
 # full - resized - wal - thumb -  fastresize - kmeans
-backend = "resized"
+backend = "kmeans"
 
 # What color space to use to produce and select the most prominent colors:
 # lab - labmixed - lch - lchmixed
@@ -24,15 +24,16 @@ color_space = "labmixed"
 # softdark - softdark16 - softdarkcomp - softdarkcomp16
 # softlight - softlight16 - softlightcomp - softlightcomp16
 
-palette = "darkcomp16"
+palette = "dark16"
 # good ones 
-#palette = "ansidark"
+#palette = "softdark"
+#palette = "darkcomp16" 
 #palette = "softdarkcomp16"
 
 # Ensures a "readable contrast" (OPTIONAL, disabled by default)
 # Should only be enabled when you notice an unreadable contrast frequently happening
 # with your images. The reference color for the contrast is the background color.
-check_contrast = true
+check_contrast = false 
 
 # Color saturation, between [1% and 100%] (OPTIONAL, disabled by default)
 # usually something higher than 50 increases the saturation and below
@@ -42,6 +43,13 @@ check_contrast = true
 # Alpha value for templating, by default 100 (no other use whatsoever)
 #alpha = 100
 
+# Difference between similar colors, used by the colorspace:
+#  1          Not perceptible by human eyes.
+#  1 - 2      Perceptible through close observation.
+#  2 - 10     Perceptible at a glance.
+#  11 - 49    Colors are more similar than opposite
+#  100        Colors are exact opposite
+threshold = 11
 [templates]
 # NOTE: prefer '' over "" for paths, avoids escaping.
 # template: A relative path that points to a file where wallust.toml is located, usually at `~/.config/wallust/`.
@@ -50,3 +58,11 @@ check_contrast = true
 # zathura = { template = 'zathura', target = '~/.config/zathura/zathurarc' }
 waybar.template = 'colors-waybar.css'
 waybar.target = '~/.config/waybar/waybarColors.css'
+
+sway.template = 'colors-sway.css'
+sway.target = '~/.config/sway/swayColors.css'
+
+kitty.template = 'colors-kitty.conf'
+kitty.target = '~/.config/kitty/kitty-colors.conf'
+
+

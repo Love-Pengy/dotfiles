@@ -42,17 +42,17 @@
   },
   "clock#simpleclock": {
     "tooltip": false,
-    "format": "  {:%I:%M}",
+    "format": " {:%I:%M}",
   },
   "clock": {
-    "format": "  {:%a, %b %d}",
+    "format": " {:%a, %b %d}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
   },
   //from https://gitlab.com/stephan-raabe/dotfiles/-/blob/main/waybar/modules.json?ref_type=heads
   "network": {
     "format": "{ifname}",
     //"format-wifi": "  {signalStrength}%",
-    "format-wifi": " ", 
+    "format-wifi": "", 
     //"format-ethernet": "  {ifname}",
     "format-ethernet": "󰈀",  
     "format-disconnected": "\udb81\uddaa",
@@ -64,12 +64,12 @@
     "on-click": "~/.config/waybar/networkmanager.sh"
   },
   "cpu": {
-    "format": "  {usage}%",
+    "format": " {usage}%",
     "tooltip": true,
     "interval": 1,
   },
   "memory": {
-    "format": "  {used:0.2f} GB",
+    "format": " {used:0.2f} GB",
   },
   "pulseaudio": {
     "format": "{icon}{volume}%",
@@ -90,7 +90,7 @@
 			"warning": 50,
 			"critical": 20
 		},
-		"format": "{icon}  {capacity}%",
+		"format": "{icon} {capacity}%",
 		"format-icons": [
 			"",
 			"",

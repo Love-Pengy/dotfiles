@@ -1,5 +1,5 @@
 
-
+include ~/.config/sway/swayColors.css
 
 ### GENERAL
 
@@ -12,7 +12,7 @@
 
     #               border    bg        text     indicator
     #         (normal border)                    (indicator for where next window will open) 
-    client.focused "#7777EE" "#7777EE" "#ffffff" "#7777EE"
+    client.focused "$active" "$active" "$active" "$active"
     client.focused_inactive "#000000" "#000000" "#000000" "#000000"
     client.unfocused "#000000" "#000000" "#000000" "#000000"
 
@@ -28,7 +28,8 @@
     set $mod Mod1
 
     # Your preferred terminal emulator
-    set $term kitty --single-instance
+    set $term kitty 
+    #--single-instance
 
     # Your preferred application launcher
     set $menu tofi-drun --drun-launch=true --font /home/Bee/.local/share/fonts/JetBrainsMonoNLNerdFontMono-Regular.ttf --ascii-input true --hint-font false  
@@ -79,7 +80,8 @@
 ### Behavior
 
     # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-    output * bg `$HOME/.config/sway/random_bg` fill
+    output * bg `$HOME/.config/sway/random_bg` fill  
+    
 
     exec swayidle -w \
           timeout 600 'swaylock -f -e -i ~/Pictures/lockScreen.png -s fill' \
