@@ -33,7 +33,7 @@ palette = "dark16"
 # Ensures a "readable contrast" (OPTIONAL, disabled by default)
 # Should only be enabled when you notice an unreadable contrast frequently happening
 # with your images. The reference color for the contrast is the background color.
-check_contrast = false 
+check_contrast = true 
 
 # Color saturation, between [1% and 100%] (OPTIONAL, disabled by default)
 # usually something higher than 50 increases the saturation and below
@@ -65,4 +65,8 @@ sway.target = '~/.config/sway/swayColors.css'
 kitty.template = 'colors-kitty.conf'
 kitty.target = '~/.config/kitty/kitty-colors.conf'
 
+neopywal.template = "colors-neopywal.vim"
+neopywal.target = "~/.config/nvim/lua/plugins/neopywalColors.vim"
 
+tofi.template = "colors-tofi"
+tofi.target = "~/.config/tofi/colors-tofi"

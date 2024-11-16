@@ -1,9 +1,4 @@
-# Default config for tofi
-#
-# Copy this file to ~/.config/tofi/config and get customising!
-#
-# A complete reference of available options can be found in `man 5 tofi`.
-
+include=colors-tofi 
 #
 ### Fonts
 #
@@ -13,7 +8,7 @@
 	# characters not in the chosen font will fail to render.
 	#
 	# Otherwise, fonts are interpreted in Pango format.
-	font = monospace
+	font = $HOME/.local/share/fonts/JetBrainsMonoNLNerdFontMono-Regular.ttf 
 
 	# Point size of text.
 	font-size = 24
@@ -42,31 +37,11 @@
 	# specified via `font`. Disabling font hinting speeds up text
 	# rendering appreciably, but will likely look poor at small font pixel
 	# sizes.
-	hint-font = true
+	hint-font = false 
 
 #
 ### Text theming
 #
-	# Default text color
-	#
-	# All text defaults to this color if not otherwise specified.
-	text-color = #FFFFFF
-
-	# All pieces of text have the same theming attributes available:
-	#
-	# *-color
-	#     Foreground color
-	#
-	# *-background
-	#     Background color
-	#
-	# *-background-padding
-	#     Background padding in pixels (comma-delimited, CSS-style list).
-	#     See "DIRECTIONAL VALUES" under `man 5 tofi` for more info.
-	#
-	# *-background-corner-radius
-	#     Radius of background box corners in pixels
-
 	# Prompt text theme
 	# prompt-color = #FFFFFF
 	prompt-background = #00000000
@@ -91,18 +66,6 @@
 	default-result-background-padding = 0
 	default-result-background-corner-radius = 0
 
-	# Alternate (even-numbered) result text theme
-	#
-	# If unspecified, these all default to the corresponding
-	# default-result-* attribute.
-	#
-	# alternate-result-color = #FFFFFF
-	# alternate-result-background = #00000000
-	# alternate-result-background-padding = 0
-	# alternate-result-background-corner-radius = 0
-
-	# Selection text
-	selection-color = #8133ff   
 	selection-background = #00000000
 	selection-background-padding = 0
 	selection-background-corner-radius = 0
@@ -237,12 +200,12 @@
 
 	# If true, directly launch applications on selection when in drun mode.
 	# Otherwise, just print the command line to stdout.
-	drun-launch = false
+	drun-launch = true 
 
 	# The terminal to run terminal programs in when in drun mode.
 	# This option has no effect if drun-launch is set to true.
 	# Defaults to the value of the TERMINAL environment variable.
-	# terminal = foot
+	terminal = kitty 
 
 	# Delay keyboard initialisation until after the first draw to screen.
 	# This option is experimental, and will cause tofi to miss keypresses
@@ -258,7 +221,7 @@
 	# Assume input is plain ASCII, and disable some Unicode handling
 	# functions. This is faster, but means e.g. a search for "e" will not
 	# match "é".
-	ascii-input = false
+	ascii-input = true 
 
 #
 ### Inclusion

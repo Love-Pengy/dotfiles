@@ -1,5 +1,4 @@
 
-include ~/.config/sway/swayColors.css
 
 ### GENERAL
 
@@ -10,11 +9,6 @@ include ~/.config/sway/swayColors.css
     # set default border size to 3
     default_border pixel 2
 
-    #               border    bg        text     indicator
-    #         (normal border)                    (indicator for where next window will open) 
-    client.focused "$active" "$active" "$active" "$active"
-    client.focused_inactive "#000000" "#000000" "#000000" "#000000"
-    client.unfocused "#000000" "#000000" "#000000" "#000000"
 
     # get screensharing working on obs
     #exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
@@ -32,7 +26,7 @@ include ~/.config/sway/swayColors.css
     #--single-instance
 
     # Your preferred application launcher
-    set $menu tofi-drun --drun-launch=true --font /home/Bee/.local/share/fonts/JetBrainsMonoNLNerdFontMono-Regular.ttf --ascii-input true --hint-font false  
+    set $menu tofi-drun     
 
     #use pactl to adjust volume in pulse audio
     set $refresh_i3status kill all -SIGUSR1 i3status
@@ -228,4 +222,11 @@ include ~/.config/sway/swayColors.css
 
 
 
+# at bottom to load after random_bg selection
 
+    include ~/.config/sway/swayColors.css
+    #               border    bg        text     indicator
+    #         (normal border)                    (indicator for where next window will open) 
+    client.focused "$active" "$active" "$active" "$active"
+    client.focused_inactive "#000000" "#000000" "#000000" "#000000"
+    client.unfocused "#000000" "#000000" "#000000" "#000000"
