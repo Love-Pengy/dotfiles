@@ -12,7 +12,7 @@ if len(args) == 0:
     args = [""]
 walls = list()
 for source in args:
-    walls += glob.glob(f"{homeDir}/Pictures/Wallpapers/" + source + "/*.*")
+    walls += glob.glob(f"{homeDir}/Pictures/Wallpapers/" + source + "/*.png")
 chosen = random.choice(walls)
 # -s skips setting terminal colorscheme
 # -q doesn't print anything

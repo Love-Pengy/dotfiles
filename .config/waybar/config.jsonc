@@ -32,8 +32,8 @@
   "sway/workspaces": {
     "on-click": "activate",
     "format": "{name}",
-    "all-outputs": true,
-    "disable-scroll": false,
+    "all-outputs": false,
+    "disable-scroll": true,
     "active-only": false,
   },
   "tray": {

@@ -217,7 +217,7 @@
     assign [class="vesktop"] 4
 
     #  smarter splitting cause im lazy :3
-    for_window [app_id="kitty"] split toggle ; #opacity .97 
+    for_window [app_id="kitty"] split toggle ; opacity .97 
     
 
 
@@ -230,3 +230,4 @@
     client.focused "$active" "$active" "$active" "$active"
     client.focused_inactive "#000000" "#000000" "#000000" "#000000"
     client.unfocused "#000000" "#000000" "#000000" "#000000"
+    

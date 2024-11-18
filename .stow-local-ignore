@@ -5,6 +5,7 @@
 \.gitignore
 \.gitmodules
 
+/externalScripts
 /assets
 
 /install.sh

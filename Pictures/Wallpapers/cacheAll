@@ -1,0 +1,4 @@
+#!/usr/bin/sh
+
+# cache everything in the wallpaper folder (current directory)
+ls -d -1 "$PWD/"*.png | xargs -I {} wallust run -s -q {}                                                   

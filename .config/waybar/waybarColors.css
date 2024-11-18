@@ -1,27 +1,27 @@
-@define-color foreground #E5D7B6;
+@define-color foreground #DBF8C8;
 
 
-@define-color cursor #E5D7B6;
-@define-color color0 #454241;
-@define-color color1 #524A46;
-@define-color color2 #775D43;
-@define-color color3 #7A5F43;
-@define-color color4 #7D6244;
-@define-color color5 #998050;
-@define-color color6 #997E42;
-@define-color color7 #D2BD8E;
-@define-color color8 #938463;
-@define-color color9 #5A504A;
-@define-color color10 #8C6946;
-@define-color color11 #906B46;
-@define-color color12 #936F48;
-@define-color color13 #A47926;
-@define-color color14 #B68C2E;
-@define-color color15 #D2BD8E;
+@define-color cursor #DBF8C8;
+@define-color color0 #000100;
+@define-color color1 #6B7965;
+@define-color color2 #5391AB;
+@define-color color3 #5493A5;
+@define-color color4 #5E9C86;
+@define-color color5 #70AE50;
+@define-color color6 #72B04A;
+@define-color color7 #C3ECA8;
+@define-color color8 #89A576;
+@define-color color9 #698060;
+@define-color color10 #6EC1E4;
+@define-color color11 #71C4DC;
+@define-color color12 #7ED0B3;
+@define-color color13 #95E76A;
+@define-color color14 #98EA62;
+@define-color color15 #C3ECA8;
 
-@define-color background rgba(26,24,23,0.5);
+@define-color background rgba(0,0,0,0.5);
 
-@define-color infoBG rgba(158,142,106, .3);
+@define-color infoBG rgba(146,177,126, .3);
 
-@define-color buttonNonActive #E5D7B6;
-@define-color buttonActive #736C5B;
+@define-color buttonNonActive #DBF8C8;
+@define-color buttonActive #6E7C64;
