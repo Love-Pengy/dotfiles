@@ -1,7 +1,7 @@
 
 # some more ls aliases
-alias ll='ls -l'
-alias lla='ls -la'
+alias ll='ls -lh'
+alias lla='ls -lah'
 alias la='ls -A'
 alias l='ls -CF'
 

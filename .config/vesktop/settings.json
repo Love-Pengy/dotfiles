@@ -11,5 +11,6 @@
     "spellCheckLanguages": [
         "en-US",
         "en"
-    ]
+    ],
+    "disableSmoothScroll": false
 }
