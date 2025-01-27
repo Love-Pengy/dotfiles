@@ -3,7 +3,6 @@
 ## Important
 
 - git
-- THE TEST FILE 
 
 ## Setup
 
@@ -17,7 +16,8 @@
 
 - sway
   - pactl
-  - light
+  - brightnessctl 
+    - need to run `sudo usermod -aG video ${USER}` then reboot for non sudo perms
   - playerctl
   - grimshot
   - swayidle
