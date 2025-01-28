@@ -1,73 +1,23 @@
-# Programs Included In Entire System
 
-## Important
-
-- git
 
 ## Setup
-
-- make the following directories in home
-  - Pictures
-  - Documents
-  - Videos
-  - Applications
-  - Downloads
-  - Projects
-
-- sway
-  - pactl
-  - brightnessctl 
+- brightnessctl 
     - need to run `sudo usermod -aG video ${USER}` then reboot for non sudo perms
-  - playerctl
-  - grimshot
-  - swayidle
-  - swaylock
-  - wl-clipboard
-  - pipewire, pipewire-pulse
-  - wlogout
-  - dunst
-- tofi 
-- waybar
-- kitty
-- hyfetch
 
 ## Utils
 
 - wallust
     - https://codeberg.org/explosion-mental/wallust
-- gnu stow 
-- citrix workspace
-- samba-client
-- localsend
-- firefox
 - obs studio
   - add ppa instead of system package
-  - install xdg-desktop-portal-wlr (I think)
-- tree
-- htop
-- ncdu
-- manpages-dev
-- manpages-posix-dev
+- localsend
 
 ## Extras
 
-- vlc
-- yt-dlp
-- cifs-utils
-- ffmpeg
-- lm-sensors
-- network-manager
-- valgrind
-- gdb
 - vesktop
 
 ## pwogwamming
 
-- neovim
-  - ripgrep
-  - fd-find
-- make
-- cmake
 - rust/cargo 
 - nerdfonts  
 
@@ -79,8 +29,6 @@
 
 - waybar
   - make networkmanager executable
-  - compile and move waybar-module-pomodoro into ~/.local/bin
--obs-studio
 
 ## NEEDS BY HAND CONFIG
 

@@ -66,7 +66,7 @@ kitty.template = 'colors-kitty.conf'
 kitty.target = '~/.config/kitty/kitty-colors.conf'
 
 neopywal.template = "colors-neopywal.vim"
-neopywal.target = "~/.config/nvim/lua/plugins/neopywalColors.vim"
+neopywal.target = "~/.cache/wal/colors-wal.vim"
 
 tofi.template = "colors-tofi"
 tofi.target = "~/.config/tofi/colors-tofi"
