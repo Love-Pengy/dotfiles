@@ -37,6 +37,7 @@ programs=(
   "manpages-dev" 
   "manpages-posix-dev" 
   "ffmpeg" 
+  "curl"
 
   ##########
   # Extras #
@@ -52,6 +53,7 @@ programs=(
   # Pwogwamming #
   ##############
   
+  "python3"
   "cargo" 
   "valgrind" 
   "gdb" 

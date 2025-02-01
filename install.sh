@@ -15,18 +15,11 @@ install="apt-get install -y -qq"
 # Important Starting Deps # 
 # ####################### #
 
+# Sudo check
 if [[ $EUID > 0 ]]
   then echo "Please run as root"
   exit
 fi
-
-# TODO: See if this is required for the initial script
-# echo "Please Set Up SSH For Github Now Before Moving On"
-# input="init"
-# while [ "$input" != "Done" ] 
-# do 
-#     read -p "Please Set Up SSH For Github Now Before Moving On (Type Done To Continue): " input
-# done
 
 # ##### #
 # Setup # 
